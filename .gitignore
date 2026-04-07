@@ -1,0 +1,19 @@
+# Ignorar todo por defecto
+*
+
+# Incluir archivos raíz del proyecto
+!.gitignore
+!README.md
+!CHANGELOG.md
+
+# Incluir carpeta design-system y su contenido
+!design-system/
+!design-system/**
+
+# Incluir carpeta archive y su contenido
+!archive/
+!archive/**
+
+# Incluir carpeta docs y su contenido
+!docs/
+!docs/**
