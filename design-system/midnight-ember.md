@@ -7,7 +7,7 @@
 | Nombre | Hex | Uso principal |
 |--------|-----|---------------|
 | Black | `#050609` | Background principal |
-| Almond Silk | `#F5D0C5` | Texto, secondary |
+| Almond Silk | `#F8EAE6` | Texto, secondary |
 | Tangerine Dream | `#F59356` | Primary, CTAs, acentos |
 | Toffee Brown | `#C8937D` | Texto secundario, muted |
 | Rich Mahogany | `#3C0000` | Accent, acentos profundos |
@@ -20,10 +20,10 @@
 | `--color-surface` | `#1c1418` | Cards, nav, elementos elevados |
 | `--color-surface-2` | `#2a2025` | Hover states, inputs |
 | `--color-primary` | `#F59356` | Botones primarios, links, filters activos |
-| `--color-secondary` | `#F5D0C5` | Botones secondary, badges |
+| `--color-secondary` | `#F8EAE6` | Botones secondary, badges |
 | `--color-accent` | `#3C0000` | Botón accent, detalles oscuros |
-| `--color-text` | `#F5D0C5` | Texto principal |
-| `--color-text-muted` | `#C8937D` | Labels, captions, placeholders |
+| `--color-text` | `#F8EAE6` | Texto principal |
+| `--color-text-muted` | `#F8EAE6` | Labels, captions, placeholders |
 | `--color-border` | `#3a2e32` | Bordes, divisores |
 
 ## Graduaciones (100–1000)
