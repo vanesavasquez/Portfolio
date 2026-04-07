@@ -2,6 +2,7 @@
 
 Portfolio profesional de **Vanesa Vasquez**, diseñadora UX/UI y desarrolladora web.
 
+✨ **[Ver el Design System Interactivo](https://vanesavasquez.github.io/Portfolio/design-system/)** ✨
 ## 📁 Estructura del Proyecto
 
 ```
