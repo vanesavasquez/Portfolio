@@ -9,7 +9,7 @@
 | Black | `#050609` | Background principal |
 | Almond Silk | `#F5D0C5` | Texto, secondary |
 | Tangerine Dream | `#F59356` | Primary, CTAs, acentos |
-| Toffee Brown | `#966652` | Texto secundario, muted |
+| Toffee Brown | `#C8937D` | Texto secundario, muted |
 | Rich Mahogany | `#3C0000` | Accent, acentos profundos |
 
 ## Roles semánticos (CSS Variables)
@@ -23,7 +23,7 @@
 | `--color-secondary` | `#F5D0C5` | Botones secondary, badges |
 | `--color-accent` | `#3C0000` | Botón accent, detalles oscuros |
 | `--color-text` | `#F5D0C5` | Texto principal |
-| `--color-text-muted` | `#966652` | Labels, captions, placeholders |
+| `--color-text-muted` | `#C8937D` | Labels, captions, placeholders |
 | `--color-border` | `#3a2e32` | Bordes, divisores |
 
 ## Graduaciones (100–1000)
