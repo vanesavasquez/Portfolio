@@ -1,831 +1,1880 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vanesa Vasquez — Design System</title>
-<style>
-/* ═══════════════════════════════════════════
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vanesa Vasquez — Design System</title>
+  <style>
+    /* ═══════════════════════════════════════════
    FONT FACE — Chillax Variable
    ═══════════════════════════════════════════ */
-@font-face {
-  font-family: 'Chillax';
-  src: url('./fonts/Chillax-Variable.woff2') format('woff2'),
-       url('./fonts/Chillax-Variable.woff') format('woff');
-  font-weight: 200 700;
-  font-display: swap;
-  font-style: normal;
-}
+    @font-face {
+      font-family: 'Chillax';
+      src: url('./fonts/Chillax-Variable.woff2') format('woff2'),
+        url('./fonts/Chillax-Variable.woff') format('woff');
+      font-weight: 200 700;
+      font-display: swap;
+      font-style: normal;
+    }
 
-/* ═══════════════════════════════════════════
+    /* ═══════════════════════════════════════════
    CSS CUSTOM PROPERTIES / DESIGN TOKENS
    ═══════════════════════════════════════════ */
-:root {
-  /* — Default: Midnight Ember — */
-  --color-bg: #050609;
-  --color-surface: #1c1418;
-  --color-surface-2: #2a2025;
-  --color-primary: #F59356;
-  --color-secondary: #F8EAE6;
-  --color-accent: #3C0000;
-  --color-text: #F8EAE6;
-  --color-text-muted: #F8EAE6;
-  --color-border: #3a2e32;
-  --color-swatch-1: #050609;
-  --color-swatch-2: #F8EAE6;
-  --color-swatch-3: #F59356;
-  --color-swatch-4: #C8937D;
-  --color-swatch-5: #3C0000;
-  --swatch-name-1: "Black";
-  --swatch-name-2: "Almond Silk";
-  --swatch-name-3: "Tangerine Dream";
-  --swatch-name-4: "Toffee Brown";
-  --swatch-name-5: "Rich Mahogany";
+    :root {
+      /* — Default: Midnight Ember — */
+      --color-bg: #050609;
+      --color-surface: #1c1418;
+      --color-surface-2: #2a2025;
+      --color-primary: #F59356;
+      --color-secondary: #F8EAE6;
+      --color-accent: #3C0000;
+      --color-text: #F8EAE6;
+      --color-text-muted: #F8EAE6;
+      --color-border: #3a2e32;
+      --color-swatch-1: #050609;
+      --color-swatch-2: #F8EAE6;
+      --color-swatch-3: #F59356;
+      --color-swatch-4: #C8937D;
+      --color-swatch-5: #3C0000;
+      --swatch-name-1: "Black";
+      --swatch-name-2: "Almond Silk";
+      --swatch-name-3: "Tangerine Dream";
+      --swatch-name-4: "Toffee Brown";
+      --swatch-name-5: "Rich Mahogany";
 
-  /* — Typography — */
-  --font: 'Chillax', sans-serif;
+      /* — Typography — */
+      --font: 'Chillax', sans-serif;
 
-  /* — Fibonacci Spacing (base 4px) — */
-  --sp-2xs: 4px;   /* fib 1 */
-  --sp-xs:  8px;   /* fib 2 */
-  --sp-sm:  12px;  /* fib 3 */
-  --sp-md:  20px;  /* fib 5 */
-  --sp-lg:  32px;  /* fib 8 */
-  --sp-xl:  52px;  /* fib 13 */
-  --sp-2xl: 84px;  /* fib 21 */
-  --sp-3xl: 136px; /* fib 34 */
-  --sp-4xl: 220px; /* fib 55 */
+      /* — Fibonacci Spacing (base 4px) — */
+      --sp-2xs: 4px;
+      /* fib 1 */
+      --sp-xs: 8px;
+      /* fib 2 */
+      --sp-sm: 12px;
+      /* fib 3 */
+      --sp-md: 20px;
+      /* fib 5 */
+      --sp-lg: 32px;
+      /* fib 8 */
+      --sp-xl: 52px;
+      /* fib 13 */
+      --sp-2xl: 84px;
+      /* fib 21 */
+      --sp-3xl: 136px;
+      /* fib 34 */
+      --sp-4xl: 220px;
+      /* fib 55 */
 
-  /* — Radius — */
-  --r-sm: 4px;
-  --r-md: 8px;
-  --r-lg: 12px;
-  --r-xl: 20px;
-  --r-full: 9999px;
+      /* — Radius — */
+      --r-sm: 4px;
+      --r-md: 8px;
+      --r-lg: 12px;
+      --r-xl: 20px;
+      --r-full: 9999px;
 
-  /* — Shadows — */
-  --shadow-sm: 0 1px 3px rgba(0,0,0,.12);
-  --shadow-md: 0 4px 12px rgba(0,0,0,.15);
-  --shadow-lg: 0 12px 32px rgba(0,0,0,.2);
-  --shadow-xl: 0 20px 52px rgba(0,0,0,.25);
+      /* — Shadows — */
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, .12);
+      --shadow-md: 0 4px 12px rgba(0, 0, 0, .15);
+      --shadow-lg: 0 12px 32px rgba(0, 0, 0, .2);
+      --shadow-xl: 0 20px 52px rgba(0, 0, 0, .25);
 
-  /* — Transitions — */
-  --ease: cubic-bezier(.4,0,.2,1);
-}
+      /* — Transitions — */
+      --ease: cubic-bezier(.4, 0, .2, 1);
+    }
 
-/* ═══════════════════════════════════════════
+    /* ═══════════════════════════════════════════
    RESET & BASE
    ═══════════════════════════════════════════ */
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;font-size:16px}
-body {
-  font-family: var(--font);
-  font-weight: 400;
-  background: var(--color-bg);
-  color: var(--color-text);
-  line-height: 1.6;
-  transition: background .5s var(--ease), color .5s var(--ease);
-  -webkit-font-smoothing: antialiased;
-}
-a{color:var(--color-primary);text-decoration:none}
-img{max-width:100%;display:block}
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
 
-/* ═══════════════════════════════════════════
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px
+    }
+
+    body {
+      font-family: var(--font);
+      font-weight: 400;
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+      transition: background .5s var(--ease), color .5s var(--ease);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--color-primary);
+      text-decoration: none
+    }
+
+    img {
+      max-width: 100%;
+      display: block
+    }
+
+    /* ═══════════════════════════════════════════
    LAYOUT
    ═══════════════════════════════════════════ */
-.container{max-width:1200px;margin:0 auto;padding:0 var(--sp-lg)}
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--sp-lg)
+    }
 
-/* ═══════════════════════════════════════════
+    /* ═══════════════════════════════════════════
    TOP NAV
    ═══════════════════════════════════════════ */
-.topnav {
-  position:sticky;top:0;z-index:100;
-  background:var(--color-surface);
-  border-bottom:1px solid var(--color-border);
-  padding:var(--sp-sm) var(--sp-lg);
-  display:flex;align-items:center;justify-content:space-between;
-  backdrop-filter:blur(12px);
-  transition: background .5s var(--ease), border-color .5s var(--ease);
-}
-.topnav__brand{font-weight:700;font-size:1.125rem;letter-spacing:-.02em}
-.topnav__links{display:flex;gap:var(--sp-md);flex-wrap:wrap}
-.topnav__links a{font-size:.8rem;font-weight:500;color:var(--color-text-muted);
-  text-transform:uppercase;letter-spacing:.08em;transition:color .3s var(--ease)}
-.topnav__links a:hover{color:var(--color-primary)}
+    .topnav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--color-surface);
+      border-bottom: 1px solid var(--color-border);
+      padding: var(--sp-sm) var(--sp-lg);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      backdrop-filter: blur(12px);
+      transition: background .5s var(--ease), border-color .5s var(--ease);
+    }
 
-/* ═══════════════════════════════════════════
+    .topnav__brand {
+      font-weight: 700;
+      font-size: 1.125rem;
+      letter-spacing: -.02em
+    }
+
+    .topnav__links {
+      display: flex;
+      gap: var(--sp-md);
+      flex-wrap: wrap
+    }
+
+    .topnav__links a {
+      font-size: .8rem;
+      font-weight: 500;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      transition: color .3s var(--ease)
+    }
+
+    .topnav__links a:hover {
+      color: var(--color-primary)
+    }
+
+    /* ═══════════════════════════════════════════
    SECTION
    ═══════════════════════════════════════════ */
-.section{padding:var(--sp-3xl) 0}
-.section + .section{border-top:1px solid var(--color-border);transition:border-color .5s var(--ease)}
-.section__label{
-  font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.15em;
-  color:var(--color-text-muted);margin-bottom:var(--sp-xs);transition:color .5s var(--ease)
-}
-.section__title{
-  font-size:clamp(2.5rem,5vw,4.5rem);font-weight:700;letter-spacing:-.03em;
-  line-height:1.05;margin-bottom:var(--sp-xl);transition:color .5s var(--ease)
-}
-.section__desc{
-  font-size:1.125rem;font-weight:300;color:var(--color-text-muted);
-  max-width:640px;margin-bottom:var(--sp-xl);transition:color .5s var(--ease)
-}
+    .section {
+      padding: var(--sp-3xl) 0
+    }
 
-/* ═══════════════════════════════════════════
+    .section+.section {
+      border-top: 1px solid var(--color-border);
+      transition: border-color .5s var(--ease)
+    }
+
+    .section__label {
+      font-size: .7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .15em;
+      color: var(--color-text-muted);
+      margin-bottom: var(--sp-xs);
+      transition: color .5s var(--ease)
+    }
+
+    .section__title {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 700;
+      letter-spacing: -.03em;
+      line-height: 1.05;
+      margin-bottom: var(--sp-xl);
+      transition: color .5s var(--ease)
+    }
+
+    .section__desc {
+      font-size: 1.125rem;
+      font-weight: 300;
+      color: var(--color-text-muted);
+      max-width: 640px;
+      margin-bottom: var(--sp-xl);
+      transition: color .5s var(--ease)
+    }
+
+    /* ═══════════════════════════════════════════
    PALETTE SELECTOR
    ═══════════════════════════════════════════ */
-.palette-selector{display:flex;gap:var(--sp-xs);flex-wrap:wrap;margin-bottom:var(--sp-xl)}
-.palette-btn{
-  padding:var(--sp-xs) var(--sp-md);border-radius:var(--r-full);border:2px solid var(--color-border);
-  background:transparent;color:var(--color-text);font-family:var(--font);font-weight:500;
-  font-size:.85rem;cursor:pointer;transition:all .3s var(--ease);
-}
-.palette-btn:hover{border-color:var(--color-primary);color:var(--color-primary)}
-.palette-btn.active{background:var(--color-primary);border-color:var(--color-primary);color:var(--color-bg);font-weight:600}
+    .palette-selector {
+      display: flex;
+      gap: var(--sp-xs);
+      flex-wrap: wrap;
+      margin-bottom: var(--sp-xl)
+    }
 
-/* ═══════════════════════════════════════════
+    .palette-btn {
+      padding: var(--sp-xs) var(--sp-md);
+      border-radius: var(--r-full);
+      border: 2px solid var(--color-border);
+      background: transparent;
+      color: var(--color-text);
+      font-family: var(--font);
+      font-weight: 500;
+      font-size: .85rem;
+      cursor: pointer;
+      transition: all .3s var(--ease);
+    }
+
+    .palette-btn:hover {
+      border-color: var(--color-primary);
+      color: var(--color-primary)
+    }
+
+    .palette-btn.active {
+      background: var(--color-primary);
+      border-color: var(--color-primary);
+      color: var(--color-bg);
+      font-weight: 600
+    }
+
+    /* ═══════════════════════════════════════════
    SWATCHES GRID
    ═══════════════════════════════════════════ */
-.swatches{display:grid;grid-template-columns:repeat(5,1fr);gap:var(--sp-sm);margin-bottom:var(--sp-xl)}
-.swatch{
-  aspect-ratio:1;border-radius:var(--r-lg);display:flex;flex-direction:column;
-  justify-content:flex-end;padding:var(--sp-sm);position:relative;overflow:hidden;
-  transition:transform .3s var(--ease),box-shadow .3s var(--ease),background .5s var(--ease);
-  cursor:default;
-}
-.swatch:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
-.swatch__name{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
-.swatch__hex{font-size:.75rem;font-weight:400;opacity:.8}
-.swatch--light .swatch__name,.swatch--light .swatch__hex{color:#1a1a1a}
-.swatch--dark .swatch__name,.swatch--dark .swatch__hex{color:#f5f5f5}
+    .swatches {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: var(--sp-sm);
+      margin-bottom: var(--sp-xl)
+    }
 
-/* Palette image */
-.palette-img-wrap{margin-bottom:var(--sp-xl);border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--color-border)}
-.palette-img-wrap img{width:100%;height:auto}
+    .swatch {
+      aspect-ratio: 1;
+      border-radius: var(--r-lg);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: var(--sp-sm);
+      position: relative;
+      overflow: hidden;
+      transition: transform .3s var(--ease), box-shadow .3s var(--ease), background .5s var(--ease);
+      cursor: default;
+    }
 
-/* Shade graduations */
-.shades-grid{margin-bottom:var(--sp-xl)}
-.shade-row{margin-bottom:var(--sp-md)}
-.shade-label{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-muted);margin-bottom:var(--sp-2xs);transition:color .5s var(--ease)}
-.shade-cells{display:grid;grid-template-columns:repeat(10,1fr);border-radius:var(--r-md);overflow:hidden}
-.shade-cell{aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:transform .2s var(--ease);cursor:default;position:relative}
-.shade-cell:hover{transform:scale(1.2);z-index:2;border-radius:var(--r-sm);box-shadow:var(--shadow-lg)}
-.shade-step{font-size:.55rem;font-weight:700;opacity:.85}
-.shade-hex{font-size:.45rem;font-weight:400;opacity:0;transition:opacity .2s var(--ease)}
-.shade-cell:hover .shade-hex{opacity:.7}
-.shade-cell--dark .shade-step,.shade-cell--dark .shade-hex{color:#f5f5f5}
-.shade-cell:not(.shade-cell--dark) .shade-step,.shade-cell:not(.shade-cell--dark) .shade-hex{color:#1a1a1a}
-.shade-cell--base{outline:2px solid var(--color-text);outline-offset:-2px;border-radius:var(--r-sm)}
-@media(max-width:768px){.shade-cells{grid-template-columns:repeat(5,1fr)}.shade-cell{aspect-ratio:auto;padding:var(--sp-xs) 0}}
+    .swatch:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg)
+    }
 
-/* ═══════════════════════════════════════════
+    .swatch__name {
+      font-size: .7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .05em
+    }
+
+    .swatch__hex {
+      font-size: .75rem;
+      font-weight: 400;
+      opacity: .8
+    }
+
+    .swatch--light .swatch__name,
+    .swatch--light .swatch__hex {
+      color: #1a1a1a
+    }
+
+    .swatch--dark .swatch__name,
+    .swatch--dark .swatch__hex {
+      color: #f5f5f5
+    }
+
+    /* Palette image */
+    .palette-img-wrap {
+      margin-bottom: var(--sp-xl);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      border: 1px solid var(--color-border)
+    }
+
+    .palette-img-wrap img {
+      width: 100%;
+      height: auto
+    }
+
+    /* Shade graduations */
+    .shades-grid {
+      margin-bottom: var(--sp-xl)
+    }
+
+    .shade-row {
+      margin-bottom: var(--sp-md)
+    }
+
+    .shade-label {
+      font-size: .7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--color-text-muted);
+      margin-bottom: var(--sp-2xs);
+      transition: color .5s var(--ease)
+    }
+
+    .shade-cells {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      border-radius: var(--r-md);
+      overflow: hidden
+    }
+
+    .shade-cell {
+      aspect-ratio: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: transform .2s var(--ease);
+      cursor: default;
+      position: relative
+    }
+
+    .shade-cell:hover {
+      transform: scale(1.2);
+      z-index: 2;
+      border-radius: var(--r-sm);
+      box-shadow: var(--shadow-lg)
+    }
+
+    .shade-step {
+      font-size: .55rem;
+      font-weight: 700;
+      opacity: .85
+    }
+
+    .shade-hex {
+      font-size: .45rem;
+      font-weight: 400;
+      opacity: 0;
+      transition: opacity .2s var(--ease)
+    }
+
+    .shade-cell:hover .shade-hex {
+      opacity: .7
+    }
+
+    .shade-cell--dark .shade-step,
+    .shade-cell--dark .shade-hex {
+      color: #f5f5f5
+    }
+
+    .shade-cell:not(.shade-cell--dark) .shade-step,
+    .shade-cell:not(.shade-cell--dark) .shade-hex {
+      color: #1a1a1a
+    }
+
+    .shade-cell--base {
+      outline: 2px solid var(--color-text);
+      outline-offset: -2px;
+      border-radius: var(--r-sm)
+    }
+
+    @media(max-width:768px) {
+      .shade-cells {
+        grid-template-columns: repeat(5, 1fr)
+      }
+
+      .shade-cell {
+        aspect-ratio: auto;
+        padding: var(--sp-xs) 0
+      }
+    }
+
+    /* ═══════════════════════════════════════════
    HOME PREVIEW
    ═══════════════════════════════════════════ */
-.preview{
-  border:1px solid var(--color-border);border-radius:var(--r-xl);overflow:hidden;
-  background:var(--color-bg);transition:all .5s var(--ease);box-shadow:var(--shadow-xl);
-}
-.preview__nav{
-  display:flex;justify-content:space-between;align-items:center;
-  padding:var(--sp-sm) var(--sp-md);border-bottom:1px solid var(--color-border);
-  background:var(--color-surface);transition:all .5s var(--ease);
-}
-.preview__logo{font-weight:700;font-size:1rem;color:var(--color-primary);transition:color .5s var(--ease)}
-.preview__links-p{display:flex;gap:var(--sp-sm)}
-.preview__links-p span{font-size:.6rem;font-weight:500;color:var(--color-text-muted);text-transform:uppercase;letter-spacing:.06em}
-.preview__hero{
-  padding:var(--sp-2xl) var(--sp-lg);text-align:center;
-  background:var(--color-bg);transition:background .5s var(--ease);
-}
-.preview__name{
-  font-size:clamp(2rem,6vw,4.5rem);font-weight:700;line-height:.95;letter-spacing:-.04em;
-  color:var(--color-text);transition:color .5s var(--ease);margin-bottom:var(--sp-xs);
-}
-.preview__name span{color:var(--color-primary);transition:color .5s var(--ease)}
-.preview__role{font-size:1rem;font-weight:300;color:var(--color-text-muted);margin-bottom:var(--sp-lg);transition:color .5s var(--ease)}
-.preview__cta{
-  display:inline-block;padding:var(--sp-sm) var(--sp-lg);
-  background:var(--color-primary);color:var(--color-bg);font-weight:600;
-  border-radius:var(--r-full);font-size:.85rem;letter-spacing:.02em;
-  transition:all .5s var(--ease);
-}
-.preview__cards{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-sm);padding:var(--sp-lg);background:var(--color-surface);transition:background .5s var(--ease)}
-.preview__card{
-  background:var(--color-bg);border-radius:var(--r-md);overflow:hidden;
-  border:1px solid var(--color-border);transition:all .5s var(--ease);
-}
-.preview__card-img{height:80px;background:var(--color-surface-2);transition:background .5s var(--ease)}
-.preview__card-body{padding:var(--sp-xs)}
-.preview__card-title{font-size:.65rem;font-weight:600;color:var(--color-text);margin-bottom:2px;transition:color .5s var(--ease)}
-.preview__card-sub{font-size:.5rem;color:var(--color-text-muted);transition:color .5s var(--ease)}
+    .preview {
+      border: 1px solid var(--color-border);
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      background: var(--color-bg);
+      transition: all .5s var(--ease);
+      box-shadow: var(--shadow-xl);
+    }
 
-/* ═══════════════════════════════════════════
+    .preview__nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--sp-sm) var(--sp-md);
+      border-bottom: 1px solid var(--color-border);
+      background: var(--color-surface);
+      transition: all .5s var(--ease);
+    }
+
+    .preview__logo {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--color-primary);
+      transition: color .5s var(--ease)
+    }
+
+    .preview__links-p {
+      display: flex;
+      gap: var(--sp-sm)
+    }
+
+    .preview__links-p span {
+      font-size: .6rem;
+      font-weight: 500;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: .06em
+    }
+
+    .preview__hero {
+      padding: var(--sp-2xl) var(--sp-lg);
+      text-align: center;
+      background: var(--color-bg);
+      transition: background .5s var(--ease);
+    }
+
+    .preview__name {
+      font-size: clamp(2rem, 6vw, 4.5rem);
+      font-weight: 700;
+      line-height: .95;
+      letter-spacing: -.04em;
+      color: var(--color-text);
+      transition: color .5s var(--ease);
+      margin-bottom: var(--sp-xs);
+    }
+
+    .preview__name span {
+      color: var(--color-primary);
+      transition: color .5s var(--ease)
+    }
+
+    .preview__role {
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--color-text-muted);
+      margin-bottom: var(--sp-lg);
+      transition: color .5s var(--ease)
+    }
+
+    .preview__cta {
+      display: inline-block;
+      padding: var(--sp-sm) var(--sp-lg);
+      background: var(--color-primary);
+      color: var(--color-bg);
+      font-weight: 600;
+      border-radius: var(--r-full);
+      font-size: .85rem;
+      letter-spacing: .02em;
+      transition: all .5s var(--ease);
+    }
+
+    .preview__cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--sp-sm);
+      padding: var(--sp-lg);
+      background: var(--color-surface);
+      transition: background .5s var(--ease)
+    }
+
+    .preview__card {
+      background: var(--color-bg);
+      border-radius: var(--r-md);
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+      transition: all .5s var(--ease);
+    }
+
+    .preview__card-img {
+      height: 80px;
+      background: var(--color-surface-2);
+      transition: background .5s var(--ease)
+    }
+
+    .preview__card-body {
+      padding: var(--sp-xs)
+    }
+
+    .preview__card-title {
+      font-size: .65rem;
+      font-weight: 600;
+      color: var(--color-text);
+      margin-bottom: 2px;
+      transition: color .5s var(--ease)
+    }
+
+    .preview__card-sub {
+      font-size: .5rem;
+      color: var(--color-text-muted);
+      transition: color .5s var(--ease)
+    }
+
+    /* ═══════════════════════════════════════════
    TYPOGRAPHY SHOWCASE
    ═══════════════════════════════════════════ */
-.type-row{
-  display:flex;align-items:baseline;gap:var(--sp-lg);padding:var(--sp-md) 0;
-  border-bottom:1px solid var(--color-border);transition:border-color .5s var(--ease);
-}
-.type-meta{min-width:160px;flex-shrink:0}
-.type-meta__name{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--color-primary);transition:color .5s var(--ease)}
-.type-meta__spec{font-size:.65rem;color:var(--color-text-muted);transition:color .5s var(--ease)}
-.type-sample{flex:1;transition:color .5s var(--ease)}
+    .type-row {
+      display: flex;
+      align-items: baseline;
+      gap: var(--sp-lg);
+      padding: var(--sp-md) 0;
+      border-bottom: 1px solid var(--color-border);
+      transition: border-color .5s var(--ease);
+    }
 
-/* ═══════════════════════════════════════════
+    .type-meta {
+      min-width: 160px;
+      flex-shrink: 0
+    }
+
+    .type-meta__name {
+      font-size: .7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--color-primary);
+      transition: color .5s var(--ease)
+    }
+
+    .type-meta__spec {
+      font-size: .65rem;
+      color: var(--color-text-muted);
+      transition: color .5s var(--ease)
+    }
+
+    .type-sample {
+      flex: 1;
+      transition: color .5s var(--ease)
+    }
+
+    /* ═══════════════════════════════════════════
    SPACING
    ═══════════════════════════════════════════ */
-.spacing-row{display:flex;align-items:center;gap:var(--sp-md);margin-bottom:var(--sp-sm)}
-.spacing-bar{height:var(--sp-md);background:var(--color-primary);border-radius:var(--r-sm);transition:background .5s var(--ease)}
-.spacing-label{font-size:.75rem;font-weight:500;min-width:80px;color:var(--color-text-muted);transition:color .5s var(--ease)}
-.spacing-val{font-size:.7rem;font-weight:400;color:var(--color-text-muted);min-width:50px;transition:color .5s var(--ease)}
+    .spacing-row {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-md);
+      margin-bottom: var(--sp-sm)
+    }
 
-/* ═══════════════════════════════════════════
+    .spacing-bar {
+      height: var(--sp-md);
+      background: var(--color-primary);
+      border-radius: var(--r-sm);
+      transition: background .5s var(--ease)
+    }
+
+    .spacing-label {
+      font-size: .75rem;
+      font-weight: 500;
+      min-width: 80px;
+      color: var(--color-text-muted);
+      transition: color .5s var(--ease)
+    }
+
+    .spacing-val {
+      font-size: .7rem;
+      font-weight: 400;
+      color: var(--color-text-muted);
+      min-width: 50px;
+      transition: color .5s var(--ease)
+    }
+
+    /* ═══════════════════════════════════════════
    12-COLUMN GRID
    ═══════════════════════════════════════════ */
-.grid-demo{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--sp-xs);margin-bottom:var(--sp-lg)}
-.grid-col{
-  background:var(--color-primary);opacity:.25;border-radius:var(--r-sm);
-  height:52px;transition:all .3s var(--ease);
-}
-.grid-col:hover{opacity:.6;transform:scaleY(1.1)}
-.grid-example{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--sp-xs);margin-bottom:var(--sp-sm)}
-.grid-example .gcol{
-  background:var(--color-primary);border-radius:var(--r-sm);padding:var(--sp-sm);
-  text-align:center;font-size:.7rem;font-weight:600;color:var(--color-bg);
-  opacity:.6;transition:all .5s var(--ease);
-}
-.grid-ex-label{font-size:.75rem;font-weight:500;color:var(--color-text-muted);margin-bottom:var(--sp-xs);transition:color .5s var(--ease)}
+    .grid-demo {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: var(--sp-xs);
+      margin-bottom: var(--sp-lg)
+    }
 
-/* ═══════════════════════════════════════════
+    .grid-col {
+      background: var(--color-primary);
+      opacity: .25;
+      border-radius: var(--r-sm);
+      height: 52px;
+      transition: all .3s var(--ease);
+    }
+
+    .grid-col:hover {
+      opacity: .6;
+      transform: scaleY(1.1)
+    }
+
+    .grid-example {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: var(--sp-xs);
+      margin-bottom: var(--sp-sm)
+    }
+
+    .grid-example .gcol {
+      background: var(--color-primary);
+      border-radius: var(--r-sm);
+      padding: var(--sp-sm);
+      text-align: center;
+      font-size: .7rem;
+      font-weight: 600;
+      color: var(--color-bg);
+      opacity: .6;
+      transition: all .5s var(--ease);
+    }
+
+    .grid-ex-label {
+      font-size: .75rem;
+      font-weight: 500;
+      color: var(--color-text-muted);
+      margin-bottom: var(--sp-xs);
+      transition: color .5s var(--ease)
+    }
+
+    /* ═══════════════════════════════════════════
    COMPONENTS
    ═══════════════════════════════════════════ */
-.comp-group{margin-bottom:var(--sp-xl)}
-.comp-group__title{
-  font-size:1.25rem;font-weight:600;margin-bottom:var(--sp-md);letter-spacing:-.01em;
-  transition:color .5s var(--ease);
-}
-.comp-row{display:flex;gap:var(--sp-sm);flex-wrap:wrap;align-items:center;margin-bottom:var(--sp-md)}
+    .comp-group {
+      margin-bottom: var(--sp-xl)
+    }
 
-/* Buttons */
-.btn{
-  display:inline-flex;align-items:center;gap:var(--sp-xs);
-  padding:var(--sp-sm) var(--sp-lg);border-radius:var(--r-full);
-  font-family:var(--font);font-weight:600;font-size:.875rem;
-  cursor:pointer;border:2px solid transparent;
-  transition:all .3s var(--ease);letter-spacing:.01em;
-}
-.btn--primary{background:var(--color-primary);color:var(--color-bg);border-color:var(--color-primary)}
-.btn--primary:hover{filter:brightness(1.1);transform:translateY(-2px);box-shadow:var(--shadow-md)}
-.btn--secondary{background:var(--color-secondary);color:var(--color-bg);border-color:var(--color-secondary)}
-.btn--secondary:hover{filter:brightness(1.05);transform:translateY(-2px)}
-.btn--outline{background:transparent;color:var(--color-primary);border-color:var(--color-primary)}
-.btn--outline:hover{background:var(--color-primary);color:var(--color-bg)}
-.btn--ghost{background:transparent;color:var(--color-text);border-color:transparent}
-.btn--ghost:hover{background:var(--color-surface-2);color:var(--color-primary)}
-.btn--sm{padding:var(--sp-2xs) var(--sp-sm);font-size:.75rem}
-.btn--lg{padding:var(--sp-md) var(--sp-xl);font-size:1rem}
-.btn--accent{background:var(--color-accent);color:var(--color-secondary);border-color:var(--color-accent)}
-.btn--accent:hover{filter:brightness(1.2);transform:translateY(-2px)}
+    .comp-group__title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: var(--sp-md);
+      letter-spacing: -.01em;
+      transition: color .5s var(--ease);
+    }
 
-/* Cards */
-.card{
-  background:var(--color-surface);border:1px solid var(--color-border);
-  border-radius:var(--r-lg);overflow:hidden;
-  transition:all .3s var(--ease);
-}
-.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
-.card__img{height:160px;background:var(--color-surface-2);transition:background .5s var(--ease)}
-.card__body{padding:var(--sp-md)}
-.card__title{font-weight:600;font-size:1rem;margin-bottom:var(--sp-2xs);transition:color .5s var(--ease)}
-.card__text{font-size:.85rem;color:var(--color-text-muted);font-weight:300;transition:color .5s var(--ease)}
-.card__tags{display:flex;gap:var(--sp-2xs);margin-top:var(--sp-sm)}
-.cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--sp-md)}
+    .comp-row {
+      display: flex;
+      gap: var(--sp-sm);
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: var(--sp-md)
+    }
 
-/* Inputs */
-.input-group{display:flex;flex-direction:column;gap:var(--sp-2xs);max-width:360px}
-.input-label{font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-muted)}
-.input{
-  padding:var(--sp-sm) var(--sp-md);border-radius:var(--r-md);
-  border:2px solid var(--color-border);background:var(--color-surface);
-  color:var(--color-text);font-family:var(--font);font-size:.9rem;
-  transition:all .3s var(--ease);outline:none;
-}
-.input:focus{border-color:var(--color-primary);box-shadow:0 0 0 3px rgba(245,147,86,.2)}
-.input::placeholder{color:var(--color-text-muted);opacity:.5}
-textarea.input{resize:vertical;min-height:100px}
-.select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23C8937D' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--sp-xs);
+      padding: var(--sp-sm) var(--sp-lg);
+      border-radius: var(--r-full);
+      font-family: var(--font);
+      font-weight: 600;
+      font-size: .875rem;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all .3s var(--ease);
+      letter-spacing: .01em;
+    }
 
-/* Tags */
-.tag{
-  display:inline-block;padding:var(--sp-2xs) var(--sp-sm);
-  border-radius:var(--r-full);font-size:.7rem;font-weight:600;
-  letter-spacing:.04em;text-transform:uppercase;
-  transition:all .3s var(--ease);
-}
-.tag--primary{background:var(--color-primary);color:var(--color-bg)}
-.tag--outline{background:transparent;border:1px solid var(--color-primary);color:var(--color-primary)}
-.tag--secondary{background:var(--color-secondary);color:var(--color-bg)}
-.tag--accent{background:var(--color-accent);color:var(--color-secondary)}
-.tag--muted{background:var(--color-surface-2);color:var(--color-text-muted)}
+    .btn--primary {
+      background: var(--color-primary);
+      color: var(--color-bg);
+      border-color: var(--color-primary)
+    }
 
-/* Subcategory label */
-.comp-sub{font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--color-text-muted);margin:var(--sp-md) 0 var(--sp-xs);transition:color .5s var(--ease)}
-.comp-sub:first-of-type{margin-top:0}
+    .btn--primary:hover {
+      filter: brightness(1.1);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md)
+    }
 
-/* Badges (Display) */
-.badge{display:inline-flex;align-items:center;gap:5px;padding:var(--sp-2xs) var(--sp-sm);border-radius:var(--r-full);font-size:.78rem;font-weight:600;border:1.5px solid;transition:all .3s var(--ease);letter-spacing:.02em}
-.badge__icon{display:inline-flex;width:16px;height:16px;border-radius:50%;align-items:center;justify-content:center;font-size:.6rem;font-weight:700;flex-shrink:0}
-.badge--error{color:#D44;border-color:color-mix(in srgb,#D44 35%,var(--color-border));background:color-mix(in srgb,#D44 10%,var(--color-bg))}
-.badge--error .badge__icon{background:color-mix(in srgb,#D44 20%,var(--color-bg))}
-.badge--warning{color:#D4930E;border-color:color-mix(in srgb,#D4930E 35%,var(--color-border));background:color-mix(in srgb,#D4930E 10%,var(--color-bg))}
-.badge--warning .badge__icon{background:color-mix(in srgb,#D4930E 20%,var(--color-bg))}
-.badge--success{color:#2E9B5F;border-color:color-mix(in srgb,#2E9B5F 35%,var(--color-border));background:color-mix(in srgb,#2E9B5F 10%,var(--color-bg))}
-.badge--success .badge__icon{background:color-mix(in srgb,#2E9B5F 20%,var(--color-bg))}
-.badge--info{color:#5B7EC2;border-color:color-mix(in srgb,#5B7EC2 35%,var(--color-border));background:color-mix(in srgb,#5B7EC2 10%,var(--color-bg))}
-.badge--info .badge__icon{background:color-mix(in srgb,#5B7EC2 20%,var(--color-bg))}
-.badge--neutral{color:var(--color-text-muted);border-color:var(--color-border);background:var(--color-surface);transition:all .5s var(--ease)}
-.badge--count{min-width:28px;justify-content:center;padding:var(--sp-2xs) var(--sp-2xs);font-weight:700}
+    .btn--secondary {
+      background: var(--color-secondary);
+      color: var(--color-bg);
+      border-color: var(--color-secondary)
+    }
 
-/* Chips (Interactive) */
-.chip{display:inline-flex;align-items:center;gap:5px;padding:var(--sp-2xs) var(--sp-sm);border-radius:var(--r-full);font-size:.78rem;font-weight:500;border:1.5px solid var(--color-border);background:var(--color-surface);color:var(--color-text);font-family:var(--font);cursor:pointer;transition:all .3s var(--ease);line-height:1.4}
-.chip:hover{border-color:var(--color-primary)}
-.chip__close{background:none;border:none;color:var(--color-text-muted);cursor:pointer;font-size:1.15em;padding:0 0 0 2px;font-family:var(--font);transition:color .2s var(--ease);line-height:1}
-.chip__close:hover{color:var(--color-primary)}
-.chip--link{color:var(--color-primary);border-color:var(--color-primary);text-decoration:none}
-.chip--link:hover{background:var(--color-primary);color:var(--color-bg)}
-.chip--filter{background:var(--color-surface);border-color:var(--color-border);color:var(--color-text)}
-.chip--filter.active{background:var(--color-primary);border-color:var(--color-primary);color:var(--color-bg);font-weight:600}
-.chip--filter:hover:not(.active){border-color:var(--color-primary)}
-.chip--dismiss{transition:all .3s var(--ease),opacity .2s var(--ease)}
+    .btn--secondary:hover {
+      filter: brightness(1.05);
+      transform: translateY(-2px)
+    }
 
-/* Divider */
-.divider{border:none;border-top:1px solid var(--color-border);margin:var(--sp-xl) 0;transition:border-color .5s var(--ease)}
+    .btn--outline {
+      background: transparent;
+      color: var(--color-primary);
+      border-color: var(--color-primary)
+    }
 
-/* ═══════════════════════════════════════════
+    .btn--outline:hover {
+      background: var(--color-primary);
+      color: var(--color-bg)
+    }
+
+    .btn--ghost {
+      background: transparent;
+      color: var(--color-text);
+      border-color: transparent
+    }
+
+    .btn--ghost:hover {
+      background: var(--color-surface-2);
+      color: var(--color-primary)
+    }
+
+    .btn--sm {
+      padding: var(--sp-2xs) var(--sp-sm);
+      font-size: .75rem
+    }
+
+    .btn--lg {
+      padding: var(--sp-md) var(--sp-xl);
+      font-size: 1rem
+    }
+
+    .btn--accent {
+      background: var(--color-accent);
+      color: var(--color-secondary);
+      border-color: var(--color-accent)
+    }
+
+    .btn--accent:hover {
+      filter: brightness(1.2);
+      transform: translateY(-2px)
+    }
+
+    /* Cards */
+    .card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      transition: all .3s var(--ease);
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg)
+    }
+
+    .card__img {
+      height: 160px;
+      background: var(--color-surface-2);
+      transition: background .5s var(--ease)
+    }
+
+    .card__body {
+      padding: var(--sp-md)
+    }
+
+    .card__title {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: var(--sp-2xs);
+      transition: color .5s var(--ease)
+    }
+
+    .card__text {
+      font-size: .85rem;
+      color: var(--color-text-muted);
+      font-weight: 300;
+      transition: color .5s var(--ease)
+    }
+
+    .card__tags {
+      display: flex;
+      gap: var(--sp-2xs);
+      margin-top: var(--sp-sm)
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: var(--sp-md)
+    }
+
+    /* Inputs */
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-2xs);
+      max-width: 360px
+    }
+
+    .input-label {
+      font-size: .75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--color-text-muted)
+    }
+
+    .input {
+      padding: var(--sp-sm) var(--sp-md);
+      border-radius: var(--r-md);
+      border: 2px solid var(--color-border);
+      background: var(--color-surface);
+      color: var(--color-text);
+      font-family: var(--font);
+      font-size: .9rem;
+      transition: all .3s var(--ease);
+      outline: none;
+    }
+
+    .input:focus {
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 3px rgba(245, 147, 86, .2)
+    }
+
+    .input::placeholder {
+      color: var(--color-text-muted);
+      opacity: .5
+    }
+
+    textarea.input {
+      resize: vertical;
+      min-height: 100px
+    }
+
+    .select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23C8937D' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center
+    }
+
+    /* Tags */
+    .tag {
+      display: inline-block;
+      padding: var(--sp-2xs) var(--sp-sm);
+      border-radius: var(--r-full);
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      transition: all .3s var(--ease);
+    }
+
+    .tag--primary {
+      background: var(--color-primary);
+      color: var(--color-bg)
+    }
+
+    .tag--outline {
+      background: transparent;
+      border: 1px solid var(--color-primary);
+      color: var(--color-primary)
+    }
+
+    .tag--secondary {
+      background: var(--color-secondary);
+      color: var(--color-bg)
+    }
+
+    .tag--accent {
+      background: var(--color-accent);
+      color: var(--color-secondary)
+    }
+
+    .tag--muted {
+      background: var(--color-surface-2);
+      color: var(--color-text-muted)
+    }
+
+    /* Subcategory label */
+    .comp-sub {
+      font-size: .65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--color-text-muted);
+      margin: var(--sp-md) 0 var(--sp-xs);
+      transition: color .5s var(--ease)
+    }
+
+    .comp-sub:first-of-type {
+      margin-top: 0
+    }
+
+    /* Badges (Display) */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: var(--sp-2xs) var(--sp-sm);
+      border-radius: var(--r-full);
+      font-size: .78rem;
+      font-weight: 600;
+      border: 1.5px solid;
+      transition: all .3s var(--ease);
+      letter-spacing: .02em
+    }
+
+    .badge__icon {
+      display: inline-flex;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      font-size: .6rem;
+      font-weight: 700;
+      flex-shrink: 0
+    }
+
+    .badge--error {
+      color: #D44;
+      border-color: color-mix(in srgb, #D44 35%, var(--color-border));
+      background: color-mix(in srgb, #D44 10%, var(--color-bg))
+    }
+
+    .badge--error .badge__icon {
+      background: color-mix(in srgb, #D44 20%, var(--color-bg))
+    }
+
+    .badge--warning {
+      color: #D4930E;
+      border-color: color-mix(in srgb, #D4930E 35%, var(--color-border));
+      background: color-mix(in srgb, #D4930E 10%, var(--color-bg))
+    }
+
+    .badge--warning .badge__icon {
+      background: color-mix(in srgb, #D4930E 20%, var(--color-bg))
+    }
+
+    .badge--success {
+      color: #2E9B5F;
+      border-color: color-mix(in srgb, #2E9B5F 35%, var(--color-border));
+      background: color-mix(in srgb, #2E9B5F 10%, var(--color-bg))
+    }
+
+    .badge--success .badge__icon {
+      background: color-mix(in srgb, #2E9B5F 20%, var(--color-bg))
+    }
+
+    .badge--info {
+      color: #5B7EC2;
+      border-color: color-mix(in srgb, #5B7EC2 35%, var(--color-border));
+      background: color-mix(in srgb, #5B7EC2 10%, var(--color-bg))
+    }
+
+    .badge--info .badge__icon {
+      background: color-mix(in srgb, #5B7EC2 20%, var(--color-bg))
+    }
+
+    .badge--neutral {
+      color: var(--color-text-muted);
+      border-color: var(--color-border);
+      background: var(--color-surface);
+      transition: all .5s var(--ease)
+    }
+
+    .badge--count {
+      min-width: 28px;
+      justify-content: center;
+      padding: var(--sp-2xs) var(--sp-2xs);
+      font-weight: 700
+    }
+
+    /* Chips (Interactive) */
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: var(--sp-2xs) var(--sp-sm);
+      border-radius: var(--r-full);
+      font-size: .78rem;
+      font-weight: 500;
+      border: 1.5px solid var(--color-border);
+      background: var(--color-surface);
+      color: var(--color-text);
+      font-family: var(--font);
+      cursor: pointer;
+      transition: all .3s var(--ease);
+      line-height: 1.4
+    }
+
+    .chip:hover {
+      border-color: var(--color-primary)
+    }
+
+    .chip__close {
+      background: none;
+      border: none;
+      color: var(--color-text-muted);
+      cursor: pointer;
+      font-size: 1.15em;
+      padding: 0 0 0 2px;
+      font-family: var(--font);
+      transition: color .2s var(--ease);
+      line-height: 1
+    }
+
+    .chip__close:hover {
+      color: var(--color-primary)
+    }
+
+    .chip--link {
+      color: var(--color-primary);
+      border-color: var(--color-primary);
+      text-decoration: none
+    }
+
+    .chip--link:hover {
+      background: var(--color-primary);
+      color: var(--color-bg)
+    }
+
+    .chip--filter {
+      background: var(--color-surface);
+      border-color: var(--color-border);
+      color: var(--color-text)
+    }
+
+    .chip--filter.active {
+      background: var(--color-primary);
+      border-color: var(--color-primary);
+      color: var(--color-bg);
+      font-weight: 600
+    }
+
+    .chip--filter:hover:not(.active) {
+      border-color: var(--color-primary)
+    }
+
+    .chip--dismiss {
+      transition: all .3s var(--ease), opacity .2s var(--ease)
+    }
+
+    /* Divider */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--color-border);
+      margin: var(--sp-xl) 0;
+      transition: border-color .5s var(--ease)
+    }
+
+    /* ═══════════════════════════════════════════
    RESPONSIVE
    ═══════════════════════════════════════════ */
-@media(max-width:768px){
-  .swatches{grid-template-columns:repeat(3,1fr)}
-  .preview__cards{grid-template-columns:1fr 1fr}
-  .type-row{flex-direction:column;gap:var(--sp-2xs)}
-  .type-meta{min-width:auto}
-  .grid-example .gcol{padding:var(--sp-2xs);font-size:.55rem}
-  .topnav{flex-direction:column;gap:var(--sp-xs)}
-}
-@media(max-width:480px){
-  .swatches{grid-template-columns:repeat(2,1fr)}
-  .preview__cards{grid-template-columns:1fr}
-  .cards-grid{grid-template-columns:1fr}
-}
+    @media(max-width:768px) {
+      .swatches {
+        grid-template-columns: repeat(3, 1fr)
+      }
 
-/* ═══════════════════════════════════════════
+      .preview__cards {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .type-row {
+        flex-direction: column;
+        gap: var(--sp-2xs)
+      }
+
+      .type-meta {
+        min-width: auto
+      }
+
+      .grid-example .gcol {
+        padding: var(--sp-2xs);
+        font-size: .55rem
+      }
+
+      .topnav {
+        flex-direction: column;
+        gap: var(--sp-xs)
+      }
+    }
+
+    @media(max-width:480px) {
+      .swatches {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .preview__cards {
+        grid-template-columns: 1fr
+      }
+
+      .cards-grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    /* ═══════════════════════════════════════════
    FOOTER
    ═══════════════════════════════════════════ */
-.footer{
-  text-align:center;padding:var(--sp-2xl) var(--sp-lg);
-  border-top:1px solid var(--color-border);
-  font-size:.8rem;color:var(--color-text-muted);font-weight:300;
-  transition:all .5s var(--ease);
-}
+    .footer {
+      text-align: center;
+      padding: var(--sp-2xl) var(--sp-lg);
+      border-top: 1px solid var(--color-border);
+      font-size: .8rem;
+      color: var(--color-text-muted);
+      font-weight: 300;
+      transition: all .5s var(--ease);
+    }
 
-/* Export info */
-.export-note{
-  background:var(--color-surface);border:1px solid var(--color-border);
-  border-radius:var(--r-lg);padding:var(--sp-lg);margin-top:var(--sp-xl);
-  transition:all .5s var(--ease);
-}
-.export-note__title{font-weight:600;margin-bottom:var(--sp-xs);color:var(--color-primary)}
-.export-note__text{font-size:.85rem;color:var(--color-text-muted);font-weight:300;line-height:1.7}
-</style>
+    /* Export info */
+    .export-note {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--r-lg);
+      padding: var(--sp-lg);
+      margin-top: var(--sp-xl);
+      transition: all .5s var(--ease);
+    }
+
+    .export-note__title {
+      font-weight: 600;
+      margin-bottom: var(--sp-xs);
+      color: var(--color-primary)
+    }
+
+    .export-note__text {
+      font-size: .85rem;
+      color: var(--color-text-muted);
+      font-weight: 300;
+      line-height: 1.7
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- ═══════════════════ TOP NAV ═══════════════════ -->
-<nav class="topnav">
-  <div class="topnav__brand">Vanesa Vasquez — Design System</div>
-  <div class="topnav__links">
-    <a href="#palettes">Paletas</a>
-    <a href="#typography">Tipografía</a>
-    <a href="#spacing">Spacing</a>
-    <a href="#grid">Grilla</a>
-    <a href="#components">Componentes</a>
-  </div>
-</nav>
+  <!-- ═══════════════════ TOP NAV ═══════════════════ -->
+  <nav class="topnav">
+    <div class="topnav__brand">Vanesa Vasquez — Design System</div>
+    <div class="topnav__links">
+      <a href="#palettes">Paletas</a>
+      <a href="#typography">Tipografía</a>
+      <a href="#spacing">Spacing</a>
+      <a href="#grid">Grilla</a>
+      <a href="#components">Componentes</a>
+    </div>
+  </nav>
 
-<!-- ═══════════════════ PALETTES ═══════════════════ -->
-<section id="palettes" class="section">
-<div class="container">
-  <div class="section__label">01 — Identidad Visual</div>
-  <div class="section__title">Paletas<br>de Color</div>
-  <div class="section__desc">Cuatro direcciones cromáticas para explorar. Seleccioná una paleta para ver cómo transforma todo el sistema.</div>
+  <!-- ═══════════════════ PALETTES ═══════════════════ -->
+  <section id="palettes" class="section">
+    <div class="container">
+      <div class="section__label">01 — Identidad Visual</div>
+      <div class="section__title">Paletas<br>de Color</div>
+      <div class="section__desc">Cuatro direcciones cromáticas para explorar. Seleccioná una paleta para ver cómo
+        transforma todo el sistema.</div>
 
-  <div class="palette-selector">
-    <button class="palette-btn active" data-palette="midnight">Midnight Ember</button>
-    <button class="palette-btn" data-palette="golden">Golden Hour</button>
-    <button class="palette-btn" data-palette="botanical">Botanical Calm</button>
-    <button class="palette-btn" data-palette="terra">Terra Nova</button>
-  </div>
+      <div class="palette-selector">
+        <button class="palette-btn active" data-palette="midnight">Midnight Ember</button>
+        <button class="palette-btn" data-palette="golden">Golden Hour</button>
+        <button class="palette-btn" data-palette="botanical">Botanical Calm</button>
+        <button class="palette-btn" data-palette="terra">Terra Nova</button>
+      </div>
 
-  <div class="swatches" id="swatchGrid">
-    <!-- Filled by JS -->
-  </div>
+      <div class="swatches" id="swatchGrid">
+        <!-- Filled by JS -->
+      </div>
 
-  <div class="palette-img-wrap" id="paletteImg">
-    <img src="../assets/palettes/Midnight Ember.png" alt="Paleta activa">
-  </div>
+      <div class="palette-img-wrap" id="paletteImg">
+        <img src="../assets/palettes/Midnight Ember.png" alt="Paleta activa">
+      </div>
 
-  <div class="section__label" style="margin-top:var(--sp-xl)">Graduaciones · 100–1000</div>
-  <div class="section__desc">Cada color expandido en 10 tonos, del más claro (100) al más oscuro (1000). El paso 500 marca el color base.</div>
-  <div id="shadesGrid" class="shades-grid"></div>
+      <div class="section__label" style="margin-top:var(--sp-xl)">Graduaciones · 100–1000</div>
+      <div class="section__desc">Cada color expandido en 10 tonos, del más claro (100) al más oscuro (1000). El paso 500
+        marca el color base.</div>
+      <div id="shadesGrid" class="shades-grid"></div>
 
-  <div class="section__label" style="margin-top:var(--sp-xl)">Preview — Home</div>
-  <div class="preview" id="homePreview">
-    <div class="preview__nav">
-      <span class="preview__logo">VV</span>
-      <div class="preview__links-p">
-        <span>Proyectos</span><span>Sobre mí</span><span>Contacto</span>
+      <div class="section__label" style="margin-top:var(--sp-xl)">Preview — Home</div>
+      <div class="preview" id="homePreview">
+        <div class="preview__nav">
+          <span class="preview__logo">VV</span>
+          <div class="preview__links-p">
+            <span>Proyectos</span><span>Sobre mí</span><span>Contacto</span>
+          </div>
+        </div>
+        <div class="preview__hero">
+          <div class="preview__name">Vanesa<br><span>Vasquez</span></div>
+          <div class="preview__role">UX / UI Designer</div>
+          <a class="preview__cta">Ver Proyectos</a>
+        </div>
+        <div class="preview__cards">
+          <div class="preview__card">
+            <div class="preview__card-img"></div>
+            <div class="preview__card-body">
+              <div class="preview__card-title">Life Seguros</div>
+              <div class="preview__card-sub">Design System · UX Research</div>
+            </div>
+          </div>
+          <div class="preview__card">
+            <div class="preview__card-img"></div>
+            <div class="preview__card-body">
+              <div class="preview__card-title">Little Planet</div>
+              <div class="preview__card-sub">Branding · UI Design</div>
+            </div>
+          </div>
+          <div class="preview__card">
+            <div class="preview__card-img"></div>
+            <div class="preview__card-body">
+              <div class="preview__card-title">E-Commerce</div>
+              <div class="preview__card-sub">UX · Prototyping</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="preview__hero">
-      <div class="preview__name">Vanesa<br><span>Vasquez</span></div>
-      <div class="preview__role">UX / UI Designer</div>
-      <a class="preview__cta">Ver Proyectos</a>
+  </section>
+
+  <!-- ═══════════════════ TYPOGRAPHY ═══════════════════ -->
+  <section id="typography" class="section">
+    <div class="container">
+      <div class="section__label">02 — Tipografía</div>
+      <div class="section__title">Chillax</div>
+      <div class="section__desc">Una sola familia tipográfica, dramática y protagonista. Variable de 200 a 700, diseñada
+        para impactar.</div>
+
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-meta__name">Display XL</div>
+          <div class="type-meta__spec">120px / 700 / -0.04em</div>
+        </div>
+        <div class="type-sample"
+          style="font-size:clamp(3rem,8vw,7.5rem);font-weight:700;line-height:1;letter-spacing:-.04em">Vanesa</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-meta__name">Display</div>
+          <div class="type-meta__spec">96px / 700 / -0.03em</div>
+        </div>
+        <div class="type-sample"
+          style="font-size:clamp(2.5rem,6vw,6rem);font-weight:700;line-height:1;letter-spacing:-.03em">Vasquez</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-meta__name">H1</div>
+          <div class="type-meta__spec">72px / 700 / -0.02em</div>
+        </div>
+        <div class="type-sample"
+          style="font-size:clamp(2rem,5vw,4.5rem);font-weight:700;line-height:1.1;letter-spacing:-.02em">Build Better
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-meta__name">H2</div>
+          <div class="type-meta__spec">56px / 600 / -0.02em</div>
+        </div>
+        <div class="type-sample"
+          style="font-size:clamp(1.75rem,4vw,3.5rem);font-weight:600;line-height:1.15;letter-spacing:-.02em">Stay Strong
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-meta__name">H3</div>
+          <div class="type-meta__spec">40px / 600 / -0.01em</div>
+        </div>
+        <div class="type-sample"
+          style="font-size:clamp(1.5rem,3vw,2.5rem);font-weight:600;line-height:1.2;letter-spacing:-.01em">Design
+          Systems</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-meta__name">H4</div>
+          <div class="type-meta__spec">32px / 500</div>
+        </div>
+        <div class="type-sample" style="font-size:2rem;font-weight:500;line-height:1.25">UX Research</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-meta__name">H5</div>
+          <div class="type-meta__spec">24px / 500</div>
+        </div>
+        <div class="type-sample" style="font-size:1.5rem;font-weight:500;line-height:1.3">Prototyping</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-meta__name">H6</div>
+          <div class="type-meta__spec">20px / 500</div>
+        </div>
+        <div class="type-sample" style="font-size:1.25rem;font-weight:500;line-height:1.4">Visual Design</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-meta__name">Subtitle</div>
+          <div class="type-meta__spec">18px / 500</div>
+        </div>
+        <div class="type-sample" style="font-size:1.125rem;font-weight:500;line-height:1.5">Creando experiencias
+          digitales memorables</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-meta__name">Body Large</div>
+          <div class="type-meta__spec">18px / 400</div>
+        </div>
+        <div class="type-sample" style="font-size:1.125rem;font-weight:400;line-height:1.6">Diseñadora UX/UI con pasión
+          por crear interfaces que conectan con las personas.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-meta__name">Body</div>
+          <div class="type-meta__spec">16px / 400</div>
+        </div>
+        <div class="type-sample" style="font-size:1rem;font-weight:400;line-height:1.6">Cada proyecto es una oportunidad
+          para resolver problemas reales con diseño centrado en el usuario.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-meta__name">Body Small</div>
+          <div class="type-meta__spec">14px / 400</div>
+        </div>
+        <div class="type-sample" style="font-size:.875rem;font-weight:400;line-height:1.5">Investigación, prototipado,
+          testing y entrega de diseño con alto nivel de detalle.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-meta__name">Caption</div>
+          <div class="type-meta__spec">12px / 300</div>
+        </div>
+        <div class="type-sample" style="font-size:.75rem;font-weight:300;line-height:1.4">Última actualización: Marzo
+          2026</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-meta__name">Overline</div>
+          <div class="type-meta__spec">11px / 600 / 0.1em / CAPS</div>
+        </div>
+        <div class="type-sample"
+          style="font-size:.6875rem;font-weight:600;line-height:1.4;letter-spacing:.1em;text-transform:uppercase">
+          Sección destacada</div>
+      </div>
+
+      <!-- Weight showcase -->
+      <div style="margin-top:var(--sp-2xl)">
+        <div class="section__label">Pesos tipográficos</div>
+        <div
+          style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--sp-md);margin-top:var(--sp-md)">
+          <div><span
+              style="font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--color-text-muted)">Extralight
+              — 200</span>
+            <div style="font-size:2.5rem;font-weight:200;line-height:1.2;margin-top:var(--sp-2xs)">Chillax</div>
+          </div>
+          <div><span
+              style="font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--color-text-muted)">Light
+              — 300</span>
+            <div style="font-size:2.5rem;font-weight:300;line-height:1.2;margin-top:var(--sp-2xs)">Chillax</div>
+          </div>
+          <div><span
+              style="font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--color-text-muted)">Regular
+              — 400</span>
+            <div style="font-size:2.5rem;font-weight:400;line-height:1.2;margin-top:var(--sp-2xs)">Chillax</div>
+          </div>
+          <div><span
+              style="font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--color-text-muted)">Medium
+              — 500</span>
+            <div style="font-size:2.5rem;font-weight:500;line-height:1.2;margin-top:var(--sp-2xs)">Chillax</div>
+          </div>
+          <div><span
+              style="font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--color-text-muted)">Semibold
+              — 600</span>
+            <div style="font-size:2.5rem;font-weight:600;line-height:1.2;margin-top:var(--sp-2xs)">Chillax</div>
+          </div>
+          <div><span
+              style="font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--color-text-muted)">Bold
+              — 700</span>
+            <div style="font-size:2.5rem;font-weight:700;line-height:1.2;margin-top:var(--sp-2xs)">Chillax</div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="preview__cards">
-      <div class="preview__card"><div class="preview__card-img"></div><div class="preview__card-body"><div class="preview__card-title">Life Seguros</div><div class="preview__card-sub">Design System · UX Research</div></div></div>
-      <div class="preview__card"><div class="preview__card-img"></div><div class="preview__card-body"><div class="preview__card-title">Little Planet</div><div class="preview__card-sub">Branding · UI Design</div></div></div>
-      <div class="preview__card"><div class="preview__card-img"></div><div class="preview__card-body"><div class="preview__card-title">E-Commerce</div><div class="preview__card-sub">UX · Prototyping</div></div></div>
+  </section>
+
+  <!-- ═══════════════════ SPACING ═══════════════════ -->
+  <section id="spacing" class="section">
+    <div class="container">
+      <div class="section__label">03 — Espaciado</div>
+      <div class="section__title">Fibonacci<br>Spacing</div>
+      <div class="section__desc">Secuencia de Fibonacci × 4px como unidad base. Proporciones armónicas naturales para
+        ritmo visual orgánico.</div>
+
+      <div id="spacingBars">
+        <div class="spacing-row">
+          <div class="spacing-label">2xs</div>
+          <div class="spacing-bar" style="width:4px"></div>
+          <div class="spacing-val">4px <span style="opacity:.5">· fib(1)</span></div>
+        </div>
+        <div class="spacing-row">
+          <div class="spacing-label">xs</div>
+          <div class="spacing-bar" style="width:8px"></div>
+          <div class="spacing-val">8px <span style="opacity:.5">· fib(2)</span></div>
+        </div>
+        <div class="spacing-row">
+          <div class="spacing-label">sm</div>
+          <div class="spacing-bar" style="width:12px"></div>
+          <div class="spacing-val">12px <span style="opacity:.5">· fib(3)</span></div>
+        </div>
+        <div class="spacing-row">
+          <div class="spacing-label">md</div>
+          <div class="spacing-bar" style="width:20px"></div>
+          <div class="spacing-val">20px <span style="opacity:.5">· fib(5)</span></div>
+        </div>
+        <div class="spacing-row">
+          <div class="spacing-label">lg</div>
+          <div class="spacing-bar" style="width:32px"></div>
+          <div class="spacing-val">32px <span style="opacity:.5">· fib(8)</span></div>
+        </div>
+        <div class="spacing-row">
+          <div class="spacing-label">xl</div>
+          <div class="spacing-bar" style="width:52px"></div>
+          <div class="spacing-val">52px <span style="opacity:.5">· fib(13)</span></div>
+        </div>
+        <div class="spacing-row">
+          <div class="spacing-label">2xl</div>
+          <div class="spacing-bar" style="width:84px"></div>
+          <div class="spacing-val">84px <span style="opacity:.5">· fib(21)</span></div>
+        </div>
+        <div class="spacing-row">
+          <div class="spacing-label">3xl</div>
+          <div class="spacing-bar" style="width:136px"></div>
+          <div class="spacing-val">136px <span style="opacity:.5">· fib(34)</span></div>
+        </div>
+        <div class="spacing-row">
+          <div class="spacing-label">4xl</div>
+          <div class="spacing-bar" style="width:220px"></div>
+          <div class="spacing-val">220px <span style="opacity:.5">· fib(55)</span></div>
+        </div>
+      </div>
+
+      <!-- Border radius -->
+      <div style="margin-top:var(--sp-2xl)">
+        <div class="section__label">Border Radius</div>
+        <div style="display:flex;gap:var(--sp-md);flex-wrap:wrap;margin-top:var(--sp-md);align-items:end">
+          <div style="text-align:center">
+            <div
+              style="width:64px;height:64px;border:2px solid var(--color-primary);border-radius:var(--r-sm);transition:border-color .5s var(--ease)">
+            </div>
+            <div style="font-size:.65rem;margin-top:var(--sp-2xs);color:var(--color-text-muted)">sm · 4px</div>
+          </div>
+          <div style="text-align:center">
+            <div
+              style="width:64px;height:64px;border:2px solid var(--color-primary);border-radius:var(--r-md);transition:border-color .5s var(--ease)">
+            </div>
+            <div style="font-size:.65rem;margin-top:var(--sp-2xs);color:var(--color-text-muted)">md · 8px</div>
+          </div>
+          <div style="text-align:center">
+            <div
+              style="width:64px;height:64px;border:2px solid var(--color-primary);border-radius:var(--r-lg);transition:border-color .5s var(--ease)">
+            </div>
+            <div style="font-size:.65rem;margin-top:var(--sp-2xs);color:var(--color-text-muted)">lg · 12px</div>
+          </div>
+          <div style="text-align:center">
+            <div
+              style="width:64px;height:64px;border:2px solid var(--color-primary);border-radius:var(--r-xl);transition:border-color .5s var(--ease)">
+            </div>
+            <div style="font-size:.65rem;margin-top:var(--sp-2xs);color:var(--color-text-muted)">xl · 20px</div>
+          </div>
+          <div style="text-align:center">
+            <div
+              style="width:64px;height:64px;border:2px solid var(--color-primary);border-radius:var(--r-full);transition:border-color .5s var(--ease)">
+            </div>
+            <div style="font-size:.65rem;margin-top:var(--sp-2xs);color:var(--color-text-muted)">full · 9999px</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Shadows -->
+      <div style="margin-top:var(--sp-2xl)">
+        <div class="section__label">Sombras</div>
+        <div style="display:flex;gap:var(--sp-lg);flex-wrap:wrap;margin-top:var(--sp-md)">
+          <div style="text-align:center">
+            <div
+              style="width:100px;height:100px;background:var(--color-surface);border-radius:var(--r-lg);box-shadow:var(--shadow-sm);transition:all .5s var(--ease)">
+            </div>
+            <div style="font-size:.65rem;margin-top:var(--sp-xs);color:var(--color-text-muted)">shadow-sm</div>
+          </div>
+          <div style="text-align:center">
+            <div
+              style="width:100px;height:100px;background:var(--color-surface);border-radius:var(--r-lg);box-shadow:var(--shadow-md);transition:all .5s var(--ease)">
+            </div>
+            <div style="font-size:.65rem;margin-top:var(--sp-xs);color:var(--color-text-muted)">shadow-md</div>
+          </div>
+          <div style="text-align:center">
+            <div
+              style="width:100px;height:100px;background:var(--color-surface);border-radius:var(--r-lg);box-shadow:var(--shadow-lg);transition:all .5s var(--ease)">
+            </div>
+            <div style="font-size:.65rem;margin-top:var(--sp-xs);color:var(--color-text-muted)">shadow-lg</div>
+          </div>
+          <div style="text-align:center">
+            <div
+              style="width:100px;height:100px;background:var(--color-surface);border-radius:var(--r-lg);box-shadow:var(--shadow-xl);transition:all .5s var(--ease)">
+            </div>
+            <div style="font-size:.65rem;margin-top:var(--sp-xs);color:var(--color-text-muted)">shadow-xl</div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-</section>
+  </section>
 
-<!-- ═══════════════════ TYPOGRAPHY ═══════════════════ -->
-<section id="typography" class="section">
-<div class="container">
-  <div class="section__label">02 — Tipografía</div>
-  <div class="section__title">Chillax</div>
-  <div class="section__desc">Una sola familia tipográfica, dramática y protagonista. Variable de 200 a 700, diseñada para impactar.</div>
+  <!-- ═══════════════════ GRID ═══════════════════ -->
+  <section id="grid" class="section">
+    <div class="container">
+      <div class="section__label">04 — Grilla</div>
+      <div class="section__title">12 Columnas</div>
+      <div class="section__desc">Sistema de grilla flexible tipo Bootstrap, preparado para React vanilla. Gap basado en
+        Fibonacci spacing.</div>
 
-  <div class="type-row"><div class="type-meta"><div class="type-meta__name">Display XL</div><div class="type-meta__spec">120px / 700 / -0.04em</div></div><div class="type-sample" style="font-size:clamp(3rem,8vw,7.5rem);font-weight:700;line-height:1;letter-spacing:-.04em">Vanesa</div></div>
-  <div class="type-row"><div class="type-meta"><div class="type-meta__name">Display</div><div class="type-meta__spec">96px / 700 / -0.03em</div></div><div class="type-sample" style="font-size:clamp(2.5rem,6vw,6rem);font-weight:700;line-height:1;letter-spacing:-.03em">Vasquez</div></div>
-  <div class="type-row"><div class="type-meta"><div class="type-meta__name">H1</div><div class="type-meta__spec">72px / 700 / -0.02em</div></div><div class="type-sample" style="font-size:clamp(2rem,5vw,4.5rem);font-weight:700;line-height:1.1;letter-spacing:-.02em">Build Better</div></div>
-  <div class="type-row"><div class="type-meta"><div class="type-meta__name">H2</div><div class="type-meta__spec">56px / 600 / -0.02em</div></div><div class="type-sample" style="font-size:clamp(1.75rem,4vw,3.5rem);font-weight:600;line-height:1.15;letter-spacing:-.02em">Stay Strong</div></div>
-  <div class="type-row"><div class="type-meta"><div class="type-meta__name">H3</div><div class="type-meta__spec">40px / 600 / -0.01em</div></div><div class="type-sample" style="font-size:clamp(1.5rem,3vw,2.5rem);font-weight:600;line-height:1.2;letter-spacing:-.01em">Design Systems</div></div>
-  <div class="type-row"><div class="type-meta"><div class="type-meta__name">H4</div><div class="type-meta__spec">32px / 500</div></div><div class="type-sample" style="font-size:2rem;font-weight:500;line-height:1.25">UX Research</div></div>
-  <div class="type-row"><div class="type-meta"><div class="type-meta__name">H5</div><div class="type-meta__spec">24px / 500</div></div><div class="type-sample" style="font-size:1.5rem;font-weight:500;line-height:1.3">Prototyping</div></div>
-  <div class="type-row"><div class="type-meta"><div class="type-meta__name">H6</div><div class="type-meta__spec">20px / 500</div></div><div class="type-sample" style="font-size:1.25rem;font-weight:500;line-height:1.4">Visual Design</div></div>
-  <div class="type-row"><div class="type-meta"><div class="type-meta__name">Subtitle</div><div class="type-meta__spec">18px / 500</div></div><div class="type-sample" style="font-size:1.125rem;font-weight:500;line-height:1.5">Creando experiencias digitales memorables</div></div>
-  <div class="type-row"><div class="type-meta"><div class="type-meta__name">Body Large</div><div class="type-meta__spec">18px / 400</div></div><div class="type-sample" style="font-size:1.125rem;font-weight:400;line-height:1.6">Diseñadora UX/UI con pasión por crear interfaces que conectan con las personas.</div></div>
-  <div class="type-row"><div class="type-meta"><div class="type-meta__name">Body</div><div class="type-meta__spec">16px / 400</div></div><div class="type-sample" style="font-size:1rem;font-weight:400;line-height:1.6">Cada proyecto es una oportunidad para resolver problemas reales con diseño centrado en el usuario.</div></div>
-  <div class="type-row"><div class="type-meta"><div class="type-meta__name">Body Small</div><div class="type-meta__spec">14px / 400</div></div><div class="type-sample" style="font-size:.875rem;font-weight:400;line-height:1.5">Investigación, prototipado, testing y entrega de diseño con alto nivel de detalle.</div></div>
-  <div class="type-row"><div class="type-meta"><div class="type-meta__name">Caption</div><div class="type-meta__spec">12px / 300</div></div><div class="type-sample" style="font-size:.75rem;font-weight:300;line-height:1.4">Última actualización: Marzo 2026</div></div>
-  <div class="type-row"><div class="type-meta"><div class="type-meta__name">Overline</div><div class="type-meta__spec">11px / 600 / 0.1em / CAPS</div></div><div class="type-sample" style="font-size:.6875rem;font-weight:600;line-height:1.4;letter-spacing:.1em;text-transform:uppercase">Sección destacada</div></div>
+      <div class="grid-demo" id="gridDemo">
+        <div class="grid-col"></div>
+        <div class="grid-col"></div>
+        <div class="grid-col"></div>
+        <div class="grid-col"></div>
+        <div class="grid-col"></div>
+        <div class="grid-col"></div>
+        <div class="grid-col"></div>
+        <div class="grid-col"></div>
+        <div class="grid-col"></div>
+        <div class="grid-col"></div>
+        <div class="grid-col"></div>
+        <div class="grid-col"></div>
+      </div>
 
-  <!-- Weight showcase -->
-  <div style="margin-top:var(--sp-2xl)">
-    <div class="section__label">Pesos tipográficos</div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--sp-md);margin-top:var(--sp-md)">
-      <div><span style="font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--color-text-muted)">Extralight — 200</span><div style="font-size:2.5rem;font-weight:200;line-height:1.2;margin-top:var(--sp-2xs)">Chillax</div></div>
-      <div><span style="font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--color-text-muted)">Light — 300</span><div style="font-size:2.5rem;font-weight:300;line-height:1.2;margin-top:var(--sp-2xs)">Chillax</div></div>
-      <div><span style="font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--color-text-muted)">Regular — 400</span><div style="font-size:2.5rem;font-weight:400;line-height:1.2;margin-top:var(--sp-2xs)">Chillax</div></div>
-      <div><span style="font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--color-text-muted)">Medium — 500</span><div style="font-size:2.5rem;font-weight:500;line-height:1.2;margin-top:var(--sp-2xs)">Chillax</div></div>
-      <div><span style="font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--color-text-muted)">Semibold — 600</span><div style="font-size:2.5rem;font-weight:600;line-height:1.2;margin-top:var(--sp-2xs)">Chillax</div></div>
-      <div><span style="font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--color-text-muted)">Bold — 700</span><div style="font-size:2.5rem;font-weight:700;line-height:1.2;margin-top:var(--sp-2xs)">Chillax</div></div>
+      <div class="grid-ex-label">12 columnas iguales</div>
+      <div class="grid-example">
+        <div class="gcol" style="grid-column:span 1">1</div>
+        <div class="gcol" style="grid-column:span 1">1</div>
+        <div class="gcol" style="grid-column:span 1">1</div>
+        <div class="gcol" style="grid-column:span 1">1</div>
+        <div class="gcol" style="grid-column:span 1">1</div>
+        <div class="gcol" style="grid-column:span 1">1</div>
+        <div class="gcol" style="grid-column:span 1">1</div>
+        <div class="gcol" style="grid-column:span 1">1</div>
+        <div class="gcol" style="grid-column:span 1">1</div>
+        <div class="gcol" style="grid-column:span 1">1</div>
+        <div class="gcol" style="grid-column:span 1">1</div>
+        <div class="gcol" style="grid-column:span 1">1</div>
+      </div>
+
+      <div class="grid-ex-label">6 + 6</div>
+      <div class="grid-example">
+        <div class="gcol" style="grid-column:span 6">col-6</div>
+        <div class="gcol" style="grid-column:span 6">col-6</div>
+      </div>
+
+      <div class="grid-ex-label">4 + 4 + 4</div>
+      <div class="grid-example">
+        <div class="gcol" style="grid-column:span 4">col-4</div>
+        <div class="gcol" style="grid-column:span 4">col-4</div>
+        <div class="gcol" style="grid-column:span 4">col-4</div>
+      </div>
+
+      <div class="grid-ex-label">3 + 6 + 3</div>
+      <div class="grid-example">
+        <div class="gcol" style="grid-column:span 3">col-3</div>
+        <div class="gcol" style="grid-column:span 6">col-6</div>
+        <div class="gcol" style="grid-column:span 3">col-3</div>
+      </div>
+
+      <div class="grid-ex-label">4 + 8 (sidebar + contenido)</div>
+      <div class="grid-example">
+        <div class="gcol" style="grid-column:span 4">col-4</div>
+        <div class="gcol" style="grid-column:span 8">col-8</div>
+      </div>
+
+      <div class="grid-ex-label">3 + 3 + 3 + 3</div>
+      <div class="grid-example">
+        <div class="gcol" style="grid-column:span 3">col-3</div>
+        <div class="gcol" style="grid-column:span 3">col-3</div>
+        <div class="gcol" style="grid-column:span 3">col-3</div>
+        <div class="gcol" style="grid-column:span 3">col-3</div>
+      </div>
     </div>
-  </div>
-</div>
-</section>
+  </section>
 
-<!-- ═══════════════════ SPACING ═══════════════════ -->
-<section id="spacing" class="section">
-<div class="container">
-  <div class="section__label">03 — Espaciado</div>
-  <div class="section__title">Fibonacci<br>Spacing</div>
-  <div class="section__desc">Secuencia de Fibonacci × 4px como unidad base. Proporciones armónicas naturales para ritmo visual orgánico.</div>
+  <!-- ═══════════════════ COMPONENTS ═══════════════════ -->
+  <section id="components" class="section">
+    <div class="container">
+      <div class="section__label">05 — Componentes UI</div>
+      <div class="section__title">Componentes</div>
+      <div class="section__desc">Elementos reutilizables construidos con los tokens del sistema. Listos para implementar
+        en React.</div>
 
-  <div id="spacingBars">
-    <div class="spacing-row"><div class="spacing-label">2xs</div><div class="spacing-bar" style="width:4px"></div><div class="spacing-val">4px <span style="opacity:.5">· fib(1)</span></div></div>
-    <div class="spacing-row"><div class="spacing-label">xs</div><div class="spacing-bar" style="width:8px"></div><div class="spacing-val">8px <span style="opacity:.5">· fib(2)</span></div></div>
-    <div class="spacing-row"><div class="spacing-label">sm</div><div class="spacing-bar" style="width:12px"></div><div class="spacing-val">12px <span style="opacity:.5">· fib(3)</span></div></div>
-    <div class="spacing-row"><div class="spacing-label">md</div><div class="spacing-bar" style="width:20px"></div><div class="spacing-val">20px <span style="opacity:.5">· fib(5)</span></div></div>
-    <div class="spacing-row"><div class="spacing-label">lg</div><div class="spacing-bar" style="width:32px"></div><div class="spacing-val">32px <span style="opacity:.5">· fib(8)</span></div></div>
-    <div class="spacing-row"><div class="spacing-label">xl</div><div class="spacing-bar" style="width:52px"></div><div class="spacing-val">52px <span style="opacity:.5">· fib(13)</span></div></div>
-    <div class="spacing-row"><div class="spacing-label">2xl</div><div class="spacing-bar" style="width:84px"></div><div class="spacing-val">84px <span style="opacity:.5">· fib(21)</span></div></div>
-    <div class="spacing-row"><div class="spacing-label">3xl</div><div class="spacing-bar" style="width:136px"></div><div class="spacing-val">136px <span style="opacity:.5">· fib(34)</span></div></div>
-    <div class="spacing-row"><div class="spacing-label">4xl</div><div class="spacing-bar" style="width:220px"></div><div class="spacing-val">220px <span style="opacity:.5">· fib(55)</span></div></div>
-  </div>
+      <!-- Buttons -->
+      <div class="comp-group">
+        <div class="comp-group__title">Botones</div>
+        <div class="comp-row">
+          <button class="btn btn--primary">Primary</button>
+          <button class="btn btn--secondary">Secondary</button>
+          <button class="btn btn--outline">Outline</button>
+          <button class="btn btn--ghost">Ghost</button>
+          <button class="btn btn--accent">Accent</button>
+        </div>
+        <div class="comp-row">
+          <button class="btn btn--primary btn--sm">Small</button>
+          <button class="btn btn--primary">Regular</button>
+          <button class="btn btn--primary btn--lg">Large</button>
+        </div>
+      </div>
 
-  <!-- Border radius -->
-  <div style="margin-top:var(--sp-2xl)">
-    <div class="section__label">Border Radius</div>
-    <div style="display:flex;gap:var(--sp-md);flex-wrap:wrap;margin-top:var(--sp-md);align-items:end">
-      <div style="text-align:center"><div style="width:64px;height:64px;border:2px solid var(--color-primary);border-radius:var(--r-sm);transition:border-color .5s var(--ease)"></div><div style="font-size:.65rem;margin-top:var(--sp-2xs);color:var(--color-text-muted)">sm · 4px</div></div>
-      <div style="text-align:center"><div style="width:64px;height:64px;border:2px solid var(--color-primary);border-radius:var(--r-md);transition:border-color .5s var(--ease)"></div><div style="font-size:.65rem;margin-top:var(--sp-2xs);color:var(--color-text-muted)">md · 8px</div></div>
-      <div style="text-align:center"><div style="width:64px;height:64px;border:2px solid var(--color-primary);border-radius:var(--r-lg);transition:border-color .5s var(--ease)"></div><div style="font-size:.65rem;margin-top:var(--sp-2xs);color:var(--color-text-muted)">lg · 12px</div></div>
-      <div style="text-align:center"><div style="width:64px;height:64px;border:2px solid var(--color-primary);border-radius:var(--r-xl);transition:border-color .5s var(--ease)"></div><div style="font-size:.65rem;margin-top:var(--sp-2xs);color:var(--color-text-muted)">xl · 20px</div></div>
-      <div style="text-align:center"><div style="width:64px;height:64px;border:2px solid var(--color-primary);border-radius:var(--r-full);transition:border-color .5s var(--ease)"></div><div style="font-size:.65rem;margin-top:var(--sp-2xs);color:var(--color-text-muted)">full · 9999px</div></div>
+      <hr class="divider">
+
+      <!-- Cards -->
+      <div class="comp-group">
+        <div class="comp-group__title">Cards</div>
+        <div class="cards-grid">
+          <div class="card">
+            <div class="card__img"></div>
+            <div class="card__body">
+              <div class="card__title">Life Seguros</div>
+              <div class="card__text">Rediseño del sistema de gestión de pólizas con investigación de usuarios.</div>
+              <div class="card__tags"><span class="tag tag--primary">UX</span><span class="tag tag--outline">Design
+                  System</span></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__img"></div>
+            <div class="card__body">
+              <div class="card__title">Little Planet</div>
+              <div class="card__text">Branding completo y diseño de interfaz para marca infantil.</div>
+              <div class="card__tags"><span class="tag tag--secondary">Branding</span><span
+                  class="tag tag--muted">UI</span></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__img"></div>
+            <div class="card__body">
+              <div class="card__title">E-Commerce App</div>
+              <div class="card__text">Diseño de experiencia para plataforma de comercio electrónico.</div>
+              <div class="card__tags"><span class="tag tag--accent">Mobile</span><span
+                  class="tag tag--outline">Prototype</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <!-- Inputs -->
+      <div class="comp-group">
+        <div class="comp-group__title">Inputs</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--sp-lg)">
+          <div class="input-group"><label class="input-label">Nombre</label><input class="input" type="text"
+              placeholder="Vanesa Vasquez"></div>
+          <div class="input-group"><label class="input-label">Email</label><input class="input" type="email"
+              placeholder="hola@vanesavasquez.com"></div>
+          <div class="input-group"><label class="input-label">Proyecto</label><select class="input select">
+              <option>Seleccionar tipo</option>
+              <option>UX Research</option>
+              <option>UI Design</option>
+              <option>Design System</option>
+            </select></div>
+          <div class="input-group"><label class="input-label">Mensaje</label><textarea class="input"
+              placeholder="Contame sobre tu proyecto..."></textarea></div>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <!-- Badges (Display) -->
+      <div class="comp-group">
+        <div class="comp-group__title">Badges <span
+            style="font-weight:300;font-size:.75em;color:var(--color-text-muted)">(Display)</span></div>
+        <div class="comp-sub">Status</div>
+        <div class="comp-row">
+          <span class="badge badge--error"><span class="badge__icon">&#10005;</span> Error</span>
+          <span class="badge badge--warning"><span class="badge__icon">&#9888;</span> Warning</span>
+          <span class="badge badge--success"><span class="badge__icon">&#10003;</span> Success</span>
+          <span class="badge badge--info"><span class="badge__icon">i</span> Info</span>
+        </div>
+        <div class="comp-sub">Neutral</div>
+        <div class="comp-row">
+          <span class="badge badge--neutral">New</span>
+          <span class="badge badge--neutral badge--count">8</span>
+          <span class="badge badge--neutral">Updated</span>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <!-- Tags / Chips (Interactive) -->
+      <div class="comp-group">
+        <div class="comp-group__title">Tags / Chips <span
+            style="font-weight:300;font-size:.75em;color:var(--color-text-muted)">(Interactive)</span></div>
+        <div class="comp-sub">Dismissible</div>
+        <div class="comp-row">
+          <span class="chip chip--dismiss">Design <button class="chip__close">&#215;</button></span>
+          <span class="chip chip--dismiss">UX <button class="chip__close">&#215;</button></span>
+          <span class="chip chip--dismiss">Tech <button class="chip__close">&#215;</button></span>
+        </div>
+        <div class="comp-sub">Links</div>
+        <div class="comp-row">
+          <a class="chip chip--link" href="#">Design &#8594;</a>
+          <a class="chip chip--link" href="#">UX Research &#8594;</a>
+        </div>
+        <div class="comp-sub">Filter</div>
+        <div class="comp-row" id="filterChips">
+          <button class="chip chip--filter">Design</button>
+          <button class="chip chip--filter active">&#10003; UX</button>
+          <button class="chip chip--filter active">&#10003; Tech</button>
+          <button class="chip chip--filter">Marketing</button>
+          <button class="chip chip--filter">SEO</button>
+        </div>
+      </div>
+
+      <!-- Figma Export Note -->
+      <div class="export-note">
+        <div class="export-note__title">📦 ¿Como exportar a Figma?</div>
+        <div class="export-note__text">
+          Estos tokens se pueden llevar a Figma de varias formas:<br>
+          <strong>1.</strong> Plugin <em>html.to.design</em> — importa esta página directamente a Figma como
+          componentes.<br>
+          <strong>2.</strong> Plugin <em>Tokens Studio</em> — exportá los tokens como JSON y sincronizalos con
+          Figma.<br>
+
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Shadows -->
-  <div style="margin-top:var(--sp-2xl)">
-    <div class="section__label">Sombras</div>
-    <div style="display:flex;gap:var(--sp-lg);flex-wrap:wrap;margin-top:var(--sp-md)">
-      <div style="text-align:center"><div style="width:100px;height:100px;background:var(--color-surface);border-radius:var(--r-lg);box-shadow:var(--shadow-sm);transition:all .5s var(--ease)"></div><div style="font-size:.65rem;margin-top:var(--sp-xs);color:var(--color-text-muted)">shadow-sm</div></div>
-      <div style="text-align:center"><div style="width:100px;height:100px;background:var(--color-surface);border-radius:var(--r-lg);box-shadow:var(--shadow-md);transition:all .5s var(--ease)"></div><div style="font-size:.65rem;margin-top:var(--sp-xs);color:var(--color-text-muted)">shadow-md</div></div>
-      <div style="text-align:center"><div style="width:100px;height:100px;background:var(--color-surface);border-radius:var(--r-lg);box-shadow:var(--shadow-lg);transition:all .5s var(--ease)"></div><div style="font-size:.65rem;margin-top:var(--sp-xs);color:var(--color-text-muted)">shadow-lg</div></div>
-      <div style="text-align:center"><div style="width:100px;height:100px;background:var(--color-surface);border-radius:var(--r-lg);box-shadow:var(--shadow-xl);transition:all .5s var(--ease)"></div><div style="font-size:.65rem;margin-top:var(--sp-xs);color:var(--color-text-muted)">shadow-xl</div></div>
-    </div>
-  </div>
-</div>
-</section>
+  <!-- ═══════════════════ FOOTER ═══════════════════ -->
+  <footer class="footer">
+    Vanesa Vasquez — Design System · Marzo 2026
+  </footer>
 
-<!-- ═══════════════════ GRID ═══════════════════ -->
-<section id="grid" class="section">
-<div class="container">
-  <div class="section__label">04 — Grilla</div>
-  <div class="section__title">12 Columnas</div>
-  <div class="section__desc">Sistema de grilla flexible tipo Bootstrap, preparado para React vanilla. Gap basado en Fibonacci spacing.</div>
+  <!-- ═══════════════════ JAVASCRIPT ═══════════════════ -->
+  <script>
+    /* ── Color shade generation ── */
+    function hexToRgb(h) { h = h.replace('#', ''); return [parseInt(h.slice(0, 2), 16), parseInt(h.slice(2, 4), 16), parseInt(h.slice(4, 6), 16)] }
+    function rgbToHsl(r, g, b) { r /= 255; g /= 255; b /= 255; const mx = Math.max(r, g, b), mn = Math.min(r, g, b), d = mx - mn; let h = 0, s = 0, l = (mx + mn) / 2; if (d) { s = l > .5 ? d / (2 - mx - mn) : d / (mx + mn); switch (mx) { case r: h = ((g - b) / d + (g < b ? 6 : 0)) / 6; break; case g: h = ((b - r) / d + 2) / 6; break; case b: h = ((r - g) / d + 4) / 6; break } } return [h * 360, s * 100, l * 100] }
+    function hslToHex(h, s, l) { s /= 100; l /= 100; const a = s * Math.min(l, 1 - l); const f = n => { const k = (n + h / 30) % 12; return Math.round(255 * (l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1))) }; return '#' + [f(0), f(8), f(4)].map(x => x.toString(16).padStart(2, '0')).join('') }
+    function generateShades(hex) {
+      const [r, g, b] = hexToRgb(hex); const [h, s, l] = rgbToHsl(r, g, b);
+      return [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000].map(step => {
+        let nl, ns = s;
+        if (step < 500) { const t = (500 - step) / 400; nl = l + (96 - l) * t; ns = s * (1 - t * 0.25) }
+        else if (step === 500) { nl = l }
+        else { const t = (step - 500) / 500; nl = l - (l - 5) * t; ns = Math.min(100, s * (1 + t * 0.1)) }
+        return { step, hex: hslToHex(h, ns, Math.max(3, Math.min(97, nl))), dark: nl < 50, isBase: step === 500 }
+      });
+    }
+    function renderShades(swatches) {
+      const grid = document.getElementById('shadesGrid');
+      grid.innerHTML = swatches.map(s => {
+        const shades = generateShades(s.hex);
+        return '<div class="shade-row"><div class="shade-label">' + s.name + ' <span style="opacity:.5">· ' + s.hex + '</span></div><div class="shade-cells">' + shades.map(sh => '<div class="shade-cell ' + (sh.dark ? 'shade-cell--dark' : '') + (sh.isBase ? ' shade-cell--base' : '') + '" style="background:' + sh.hex + '"><span class="shade-step">' + sh.step + '</span><span class="shade-hex">' + sh.hex + '</span></div>').join('') + '</div></div>';
+      }).join('');
+    }
 
-  <div class="grid-demo" id="gridDemo">
-    <div class="grid-col"></div><div class="grid-col"></div><div class="grid-col"></div>
-    <div class="grid-col"></div><div class="grid-col"></div><div class="grid-col"></div>
-    <div class="grid-col"></div><div class="grid-col"></div><div class="grid-col"></div>
-    <div class="grid-col"></div><div class="grid-col"></div><div class="grid-col"></div>
-  </div>
+    const PALETTES = {
+      midnight: {
+        name: 'Midnight Ember',
+        img: '../assets/palettes/Midnight Ember.png',
+        colors: {
+          '--color-bg': '#050609', '--color-surface': '#1c1418', '--color-surface-2': '#2a2025',
+          '--color-primary': '#F59356', '--color-secondary': '#F8EAE6', '--color-accent': '#3C0000',
+          '--color-text': '#F8EAE6', '--color-text-muted': '#F8EAE6', '--color-border': '#3a2e32'
+        },
+        swatches: [
+          { name: 'Black', hex: '#050609', dark: true },
+          { name: 'Almond Silk', hex: '#F8EAE6', dark: false },
+          { name: 'Tangerine Dream', hex: '#F59356', dark: false },
+          { name: 'Toffee Brown', hex: '#C8937D', dark: true },
+          { name: 'Rich Mahogany', hex: '#3C0000', dark: true }
+        ]
+      },
+      golden: {
+        name: 'Golden Hour',
+        img: '../assets/palettes/Golden Hour.png',
+        colors: {
+          '--color-bg': '#FBF6F0', '--color-surface': '#FFFFFF', '--color-surface-2': '#F0E8DC',
+          '--color-primary': '#C05835', '--color-secondary': '#C8943C', '--color-accent': '#EBBCB0',
+          '--color-text': '#2C1810', '--color-text-muted': '#8B6B52', '--color-border': '#E0D5C8'
+        },
+        swatches: [
+          { name: 'Cream', hex: '#FBF6F0', dark: false },
+          { name: 'Ochre Gold', hex: '#C8943C', dark: false },
+          { name: 'Soft Rose', hex: '#EBBCB0', dark: false },
+          { name: 'Burnt Sienna', hex: '#C05835', dark: true },
+          { name: 'Dark Cocoa', hex: '#2C1810', dark: true }
+        ]
+      },
+      botanical: {
+        name: 'Botanical Calm',
+        img: '../assets/palettes/Botanical Calm.png',
+        colors: {
+          '--color-bg': '#F5F0E8', '--color-surface': '#FDFCF8', '--color-surface-2': '#EBE5D8',
+          '--color-primary': '#5C7050', '--color-secondary': '#C8B99A', '--color-accent': '#3C3C3C',
+          '--color-text': '#2C2C2C', '--color-text-muted': '#6B6B5F', '--color-border': '#D8D0C2'
+        },
+        swatches: [
+          { name: 'Linen', hex: '#F5F0E8', dark: false },
+          { name: 'Sand', hex: '#C8B99A', dark: false },
+          { name: 'Sage Green', hex: '#5C7050', dark: true },
+          { name: 'Charcoal', hex: '#3C3C3C', dark: true },
+          { name: 'Cream White', hex: '#FDFCF8', dark: false }
+        ]
+      },
+      terra: {
+        name: 'Terra Nova',
+        img: '../assets/palettes/Terra Nova.png',
+        colors: {
+          '--color-bg': '#F5F5E0', '--color-surface': '#FCFCF0', '--color-surface-2': '#E8E8CC',
+          '--color-primary': '#A84F00', '--color-secondary': '#B58C91', '--color-accent': '#3A3B2F',
+          '--color-text': '#333333', '--color-text-muted': '#5A5A50', '--color-border': '#D0CCB0'
+        },
+        swatches: [
+          { name: 'Dark Olive', hex: '#3A3B2F', dark: true },
+          { name: 'Dark Gray', hex: '#333333', dark: true },
+          { name: 'Dusty Rose', hex: '#B58C91', dark: false },
+          { name: 'Warm Cream', hex: '#F5F5E0', dark: false },
+          { name: 'Burnt Orange', hex: '#A84F00', dark: true }
+        ]
+      }
+    };
 
-  <div class="grid-ex-label">12 columnas iguales</div>
-  <div class="grid-example"><div class="gcol" style="grid-column:span 1">1</div><div class="gcol" style="grid-column:span 1">1</div><div class="gcol" style="grid-column:span 1">1</div><div class="gcol" style="grid-column:span 1">1</div><div class="gcol" style="grid-column:span 1">1</div><div class="gcol" style="grid-column:span 1">1</div><div class="gcol" style="grid-column:span 1">1</div><div class="gcol" style="grid-column:span 1">1</div><div class="gcol" style="grid-column:span 1">1</div><div class="gcol" style="grid-column:span 1">1</div><div class="gcol" style="grid-column:span 1">1</div><div class="gcol" style="grid-column:span 1">1</div></div>
+    const root = document.documentElement;
+    const swatchGrid = document.getElementById('swatchGrid');
+    const paletteImg = document.getElementById('paletteImg').querySelector('img');
+    const buttons = document.querySelectorAll('.palette-btn');
 
-  <div class="grid-ex-label">6 + 6</div>
-  <div class="grid-example"><div class="gcol" style="grid-column:span 6">col-6</div><div class="gcol" style="grid-column:span 6">col-6</div></div>
-
-  <div class="grid-ex-label">4 + 4 + 4</div>
-  <div class="grid-example"><div class="gcol" style="grid-column:span 4">col-4</div><div class="gcol" style="grid-column:span 4">col-4</div><div class="gcol" style="grid-column:span 4">col-4</div></div>
-
-  <div class="grid-ex-label">3 + 6 + 3</div>
-  <div class="grid-example"><div class="gcol" style="grid-column:span 3">col-3</div><div class="gcol" style="grid-column:span 6">col-6</div><div class="gcol" style="grid-column:span 3">col-3</div></div>
-
-  <div class="grid-ex-label">4 + 8 (sidebar + contenido)</div>
-  <div class="grid-example"><div class="gcol" style="grid-column:span 4">col-4</div><div class="gcol" style="grid-column:span 8">col-8</div></div>
-
-  <div class="grid-ex-label">3 + 3 + 3 + 3</div>
-  <div class="grid-example"><div class="gcol" style="grid-column:span 3">col-3</div><div class="gcol" style="grid-column:span 3">col-3</div><div class="gcol" style="grid-column:span 3">col-3</div><div class="gcol" style="grid-column:span 3">col-3</div></div>
-</div>
-</section>
-
-<!-- ═══════════════════ COMPONENTS ═══════════════════ -->
-<section id="components" class="section">
-<div class="container">
-  <div class="section__label">05 — Componentes UI</div>
-  <div class="section__title">Componentes</div>
-  <div class="section__desc">Elementos reutilizables construidos con los tokens del sistema. Listos para implementar en React.</div>
-
-  <!-- Buttons -->
-  <div class="comp-group">
-    <div class="comp-group__title">Botones</div>
-    <div class="comp-row">
-      <button class="btn btn--primary">Primary</button>
-      <button class="btn btn--secondary">Secondary</button>
-      <button class="btn btn--outline">Outline</button>
-      <button class="btn btn--ghost">Ghost</button>
-      <button class="btn btn--accent">Accent</button>
-    </div>
-    <div class="comp-row">
-      <button class="btn btn--primary btn--sm">Small</button>
-      <button class="btn btn--primary">Regular</button>
-      <button class="btn btn--primary btn--lg">Large</button>
-    </div>
-  </div>
-
-  <hr class="divider">
-
-  <!-- Cards -->
-  <div class="comp-group">
-    <div class="comp-group__title">Cards</div>
-    <div class="cards-grid">
-      <div class="card"><div class="card__img"></div><div class="card__body"><div class="card__title">Life Seguros</div><div class="card__text">Rediseño del sistema de gestión de pólizas con investigación de usuarios.</div><div class="card__tags"><span class="tag tag--primary">UX</span><span class="tag tag--outline">Design System</span></div></div></div>
-      <div class="card"><div class="card__img"></div><div class="card__body"><div class="card__title">Little Planet</div><div class="card__text">Branding completo y diseño de interfaz para marca infantil.</div><div class="card__tags"><span class="tag tag--secondary">Branding</span><span class="tag tag--muted">UI</span></div></div></div>
-      <div class="card"><div class="card__img"></div><div class="card__body"><div class="card__title">E-Commerce App</div><div class="card__text">Diseño de experiencia para plataforma de comercio electrónico.</div><div class="card__tags"><span class="tag tag--accent">Mobile</span><span class="tag tag--outline">Prototype</span></div></div></div>
-    </div>
-  </div>
-
-  <hr class="divider">
-
-  <!-- Inputs -->
-  <div class="comp-group">
-    <div class="comp-group__title">Inputs</div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--sp-lg)">
-      <div class="input-group"><label class="input-label">Nombre</label><input class="input" type="text" placeholder="Vanesa Vasquez"></div>
-      <div class="input-group"><label class="input-label">Email</label><input class="input" type="email" placeholder="hola@vanesavasquez.com"></div>
-      <div class="input-group"><label class="input-label">Proyecto</label><select class="input select"><option>Seleccionar tipo</option><option>UX Research</option><option>UI Design</option><option>Design System</option></select></div>
-      <div class="input-group"><label class="input-label">Mensaje</label><textarea class="input" placeholder="Contame sobre tu proyecto..."></textarea></div>
-    </div>
-  </div>
-
-  <hr class="divider">
-
-  <!-- Badges (Display) -->
-  <div class="comp-group">
-    <div class="comp-group__title">Badges <span style="font-weight:300;font-size:.75em;color:var(--color-text-muted)">(Display)</span></div>
-    <div class="comp-sub">Status</div>
-    <div class="comp-row">
-      <span class="badge badge--error"><span class="badge__icon">&#10005;</span> Error</span>
-      <span class="badge badge--warning"><span class="badge__icon">&#9888;</span> Warning</span>
-      <span class="badge badge--success"><span class="badge__icon">&#10003;</span> Success</span>
-      <span class="badge badge--info"><span class="badge__icon">i</span> Info</span>
-    </div>
-    <div class="comp-sub">Neutral</div>
-    <div class="comp-row">
-      <span class="badge badge--neutral">New</span>
-      <span class="badge badge--neutral badge--count">8</span>
-      <span class="badge badge--neutral">Updated</span>
-    </div>
-  </div>
-
-  <hr class="divider">
-
-  <!-- Tags / Chips (Interactive) -->
-  <div class="comp-group">
-    <div class="comp-group__title">Tags / Chips <span style="font-weight:300;font-size:.75em;color:var(--color-text-muted)">(Interactive)</span></div>
-    <div class="comp-sub">Dismissible</div>
-    <div class="comp-row">
-      <span class="chip chip--dismiss">Design <button class="chip__close">&#215;</button></span>
-      <span class="chip chip--dismiss">UX <button class="chip__close">&#215;</button></span>
-      <span class="chip chip--dismiss">Tech <button class="chip__close">&#215;</button></span>
-    </div>
-    <div class="comp-sub">Links</div>
-    <div class="comp-row">
-      <a class="chip chip--link" href="#">Design &#8594;</a>
-      <a class="chip chip--link" href="#">UX Research &#8594;</a>
-    </div>
-    <div class="comp-sub">Filter</div>
-    <div class="comp-row" id="filterChips">
-      <button class="chip chip--filter">Design</button>
-      <button class="chip chip--filter active">&#10003; UX</button>
-      <button class="chip chip--filter active">&#10003; Tech</button>
-      <button class="chip chip--filter">Marketing</button>
-      <button class="chip chip--filter">SEO</button>
-    </div>
-  </div>
-
-  <!-- Figma Export Note -->
-  <div class="export-note">
-    <div class="export-note__title">📦 Exportar a Figma</div>
-    <div class="export-note__text">
-      Sí, estos tokens se pueden llevar a Figma de varias formas:<br>
-      <strong>1.</strong> Plugin <em>html.to.design</em> — importa esta página directamente a Figma como componentes.<br>
-      <strong>2.</strong> Plugin <em>Tokens Studio</em> — exportá los tokens como JSON y sincronizalos con Figma.<br>
-      <strong>3.</strong> Manual — usá los valores documentados acá (colores, tipografía, spacing) para crear tu librería en Figma.<br>
-      <strong>4.</strong> <em>Style Dictionary</em> — herramienta para generar tokens en múltiples formatos (CSS, JSON, Figma).
-    </div>
-  </div>
-</div>
-</section>
-
-<!-- ═══════════════════ FOOTER ═══════════════════ -->
-<footer class="footer">
-  Vanesa Vasquez — Design System · Marzo 2026
-</footer>
-
-<!-- ═══════════════════ JAVASCRIPT ═══════════════════ -->
-<script>
-/* ── Color shade generation ── */
-function hexToRgb(h){h=h.replace('#','');return[parseInt(h.slice(0,2),16),parseInt(h.slice(2,4),16),parseInt(h.slice(4,6),16)]}
-function rgbToHsl(r,g,b){r/=255;g/=255;b/=255;const mx=Math.max(r,g,b),mn=Math.min(r,g,b),d=mx-mn;let h=0,s=0,l=(mx+mn)/2;if(d){s=l>.5?d/(2-mx-mn):d/(mx+mn);switch(mx){case r:h=((g-b)/d+(g<b?6:0))/6;break;case g:h=((b-r)/d+2)/6;break;case b:h=((r-g)/d+4)/6;break}}return[h*360,s*100,l*100]}
-function hslToHex(h,s,l){s/=100;l/=100;const a=s*Math.min(l,1-l);const f=n=>{const k=(n+h/30)%12;return Math.round(255*(l-a*Math.max(Math.min(k-3,9-k,1),-1)))};return'#'+[f(0),f(8),f(4)].map(x=>x.toString(16).padStart(2,'0')).join('')}
-function generateShades(hex){
-  const[r,g,b]=hexToRgb(hex);const[h,s,l]=rgbToHsl(r,g,b);
-  return[100,200,300,400,500,600,700,800,900,1000].map(step=>{
-    let nl,ns=s;
-    if(step<500){const t=(500-step)/400;nl=l+(96-l)*t;ns=s*(1-t*0.25)}
-    else if(step===500){nl=l}
-    else{const t=(step-500)/500;nl=l-(l-5)*t;ns=Math.min(100,s*(1+t*0.1))}
-    return{step,hex:hslToHex(h,ns,Math.max(3,Math.min(97,nl))),dark:nl<50,isBase:step===500}
-  });
-}
-function renderShades(swatches){
-  const grid=document.getElementById('shadesGrid');
-  grid.innerHTML=swatches.map(s=>{
-    const shades=generateShades(s.hex);
-    return '<div class="shade-row"><div class="shade-label">'+s.name+' <span style="opacity:.5">· '+s.hex+'</span></div><div class="shade-cells">'+shades.map(sh=>'<div class="shade-cell '+(sh.dark?'shade-cell--dark':'')+(sh.isBase?' shade-cell--base':'')+'" style="background:'+sh.hex+'"><span class="shade-step">'+sh.step+'</span><span class="shade-hex">'+sh.hex+'</span></div>').join('')+'</div></div>';
-  }).join('');
-}
-
-const PALETTES = {
-  midnight: {
-    name: 'Midnight Ember',
-    img: '../assets/palettes/Midnight Ember.png',
-    colors: {
-      '--color-bg': '#050609','--color-surface': '#1c1418','--color-surface-2': '#2a2025',
-      '--color-primary': '#F59356','--color-secondary': '#F8EAE6','--color-accent': '#3C0000',
-      '--color-text': '#F8EAE6','--color-text-muted': '#F8EAE6','--color-border': '#3a2e32'
-    },
-    swatches: [
-      { name: 'Black', hex: '#050609', dark: true },
-      { name: 'Almond Silk', hex: '#F8EAE6', dark: false },
-      { name: 'Tangerine Dream', hex: '#F59356', dark: false },
-      { name: 'Toffee Brown', hex: '#C8937D', dark: true },
-      { name: 'Rich Mahogany', hex: '#3C0000', dark: true }
-    ]
-  },
-  golden: {
-    name: 'Golden Hour',
-    img: '../assets/palettes/Golden Hour.png',
-    colors: {
-      '--color-bg': '#FBF6F0','--color-surface': '#FFFFFF','--color-surface-2': '#F0E8DC',
-      '--color-primary': '#C05835','--color-secondary': '#C8943C','--color-accent': '#EBBCB0',
-      '--color-text': '#2C1810','--color-text-muted': '#8B6B52','--color-border': '#E0D5C8'
-    },
-    swatches: [
-      { name: 'Cream', hex: '#FBF6F0', dark: false },
-      { name: 'Ochre Gold', hex: '#C8943C', dark: false },
-      { name: 'Soft Rose', hex: '#EBBCB0', dark: false },
-      { name: 'Burnt Sienna', hex: '#C05835', dark: true },
-      { name: 'Dark Cocoa', hex: '#2C1810', dark: true }
-    ]
-  },
-  botanical: {
-    name: 'Botanical Calm',
-    img: '../assets/palettes/Botanical Calm.png',
-    colors: {
-      '--color-bg': '#F5F0E8','--color-surface': '#FDFCF8','--color-surface-2': '#EBE5D8',
-      '--color-primary': '#5C7050','--color-secondary': '#C8B99A','--color-accent': '#3C3C3C',
-      '--color-text': '#2C2C2C','--color-text-muted': '#6B6B5F','--color-border': '#D8D0C2'
-    },
-    swatches: [
-      { name: 'Linen', hex: '#F5F0E8', dark: false },
-      { name: 'Sand', hex: '#C8B99A', dark: false },
-      { name: 'Sage Green', hex: '#5C7050', dark: true },
-      { name: 'Charcoal', hex: '#3C3C3C', dark: true },
-      { name: 'Cream White', hex: '#FDFCF8', dark: false }
-    ]
-  },
-  terra: {
-    name: 'Terra Nova',
-    img: '../assets/palettes/Terra Nova.png',
-    colors: {
-      '--color-bg': '#F5F5E0','--color-surface': '#FCFCF0','--color-surface-2': '#E8E8CC',
-      '--color-primary': '#A84F00','--color-secondary': '#B58C91','--color-accent': '#3A3B2F',
-      '--color-text': '#333333','--color-text-muted': '#5A5A50','--color-border': '#D0CCB0'
-    },
-    swatches: [
-      { name: 'Dark Olive', hex: '#3A3B2F', dark: true },
-      { name: 'Dark Gray', hex: '#333333', dark: true },
-      { name: 'Dusty Rose', hex: '#B58C91', dark: false },
-      { name: 'Warm Cream', hex: '#F5F5E0', dark: false },
-      { name: 'Burnt Orange', hex: '#A84F00', dark: true }
-    ]
-  }
-};
-
-const root = document.documentElement;
-const swatchGrid = document.getElementById('swatchGrid');
-const paletteImg = document.getElementById('paletteImg').querySelector('img');
-const buttons = document.querySelectorAll('.palette-btn');
-
-function applyPalette(key) {
-  const p = PALETTES[key];
-  // Apply CSS vars
-  Object.entries(p.colors).forEach(([prop, val]) => root.style.setProperty(prop, val));
-  // Swatches
-  swatchGrid.innerHTML = p.swatches.map(s => `
+    function applyPalette(key) {
+      const p = PALETTES[key];
+      // Apply CSS vars
+      Object.entries(p.colors).forEach(([prop, val]) => root.style.setProperty(prop, val));
+      // Swatches
+      swatchGrid.innerHTML = p.swatches.map(s => `
     <div class="swatch ${s.dark ? 'swatch--dark' : 'swatch--light'}" style="background:${s.hex}">
       <div class="swatch__name">${s.name}</div>
       <div class="swatch__hex">${s.hex}</div>
     </div>`).join('');
-  // Shades
-  renderShades(p.swatches);
-  // Image
-  paletteImg.src = p.img;
-  paletteImg.alt = p.name;
-  // Buttons
-  buttons.forEach(b => b.classList.toggle('active', b.dataset.palette === key));
-}
+      // Shades
+      renderShades(p.swatches);
+      // Image
+      paletteImg.src = p.img;
+      paletteImg.alt = p.name;
+      // Buttons
+      buttons.forEach(b => b.classList.toggle('active', b.dataset.palette === key));
+    }
 
-buttons.forEach(b => b.addEventListener('click', () => applyPalette(b.dataset.palette)));
+    buttons.forEach(b => b.addEventListener('click', () => applyPalette(b.dataset.palette)));
 
-// Chip interactions
-document.addEventListener('click', e => {
-  // Dismiss
-  if(e.target.classList.contains('chip__close')) {
-    const chip = e.target.closest('.chip');
-    chip.style.opacity = '0'; chip.style.transform = 'scale(0.8)';
-    setTimeout(() => chip.remove(), 250);
-    e.stopPropagation();
-  }
-  // Filter toggle
-  const fc = e.target.closest('.chip--filter');
-  if(fc) {
-    const txt = fc.textContent.replace(/\u2713\s?/, '').trim();
-    fc.classList.toggle('active');
-    fc.textContent = fc.classList.contains('active') ? '\u2713 ' + txt : txt;
-  }
-});
+    // Chip interactions
+    document.addEventListener('click', e => {
+      // Dismiss
+      if (e.target.classList.contains('chip__close')) {
+        const chip = e.target.closest('.chip');
+        chip.style.opacity = '0'; chip.style.transform = 'scale(0.8)';
+        setTimeout(() => chip.remove(), 250);
+        e.stopPropagation();
+      }
+      // Filter toggle
+      const fc = e.target.closest('.chip--filter');
+      if (fc) {
+        const txt = fc.textContent.replace(/\u2713\s?/, '').trim();
+        fc.classList.toggle('active');
+        fc.textContent = fc.classList.contains('active') ? '\u2713 ' + txt : txt;
+      }
+    });
 
-// Init
-applyPalette('midnight');
-</script>
+    // Init
+    applyPalette('midnight');
+  </script>
 </body>
+
 </html>
