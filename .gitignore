@@ -17,3 +17,10 @@
 # Incluir carpeta docs y su contenido
 !docs/
 !docs/**
+
+# Incluir carpeta portfolio-web y su contenido
+!portfolio-web/
+!portfolio-web/**
+
+# Excluir node_modules dentro de portfolio-web
+portfolio-web/node_modules/

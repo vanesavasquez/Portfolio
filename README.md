@@ -3,6 +3,9 @@
 Portfolio profesional de **Vanesa Vasquez**, diseñadora UX/UI y desarrolladora web.
 
 ✨ **[Ver el Design System Interactivo](https://vanesavasquez.github.io/Portfolio/design-system/)** ✨
+
+🚀 **[Portfolio Web](https://vanesavasquez.github.io/Portfolio/)** *(próximamente)*
+
 ## 📁 Estructura del Proyecto
 
 ```
@@ -22,6 +25,10 @@ Portfolio Vane/
 ├── docs/                        ← Documentación
 │   ├── cv/                      ← Currículum (ES / EN)
 │   └── wireframes/              ← Wireframes web y mobile (PDF)
+│
+├── portfolio-web/               ← Portfolio web (React + Vite)
+│   ├── src/                     ← Código fuente React
+│   └── public/                  ← Assets estáticos
 │
 └── archive/                     ← Archivos originales (zips, fonts raw)
 ```

@@ -18,6 +18,18 @@
       font-style: normal;
     }
 
+    @font-face {
+      font-family: 'Against';
+      src: url('./fonts/against_2/against regular.ttf') format('truetype');
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Spinnaker';
+      src: url('./fonts/Spinnaker/Spinnaker-Regular.ttf') format('truetype');
+      font-style: normal;
+    }
+
     /* ═══════════════════════════════════════════
    CSS CUSTOM PROPERTIES / DESIGN TOKENS
    ═══════════════════════════════════════════ */
@@ -45,6 +57,7 @@
 
       /* — Typography — */
       --font: 'Chillax', sans-serif;
+      --font-title: 'Chillax', sans-serif;
 
       /* — Fibonacci Spacing (base 4px) — */
       --sp-2xs: 4px;
@@ -193,6 +206,7 @@
     }
 
     .section__title {
+      font-family: var(--font-title);
       font-size: clamp(2.5rem, 5vw, 4.5rem);
       font-weight: 700;
       letter-spacing: -.03em;
@@ -447,6 +461,7 @@
     }
 
     .preview__name {
+      font-family: var(--font-title);
       font-size: clamp(2rem, 6vw, 4.5rem);
       font-weight: 700;
       line-height: .95;
@@ -1169,6 +1184,7 @@
         <button class="palette-btn" data-palette="golden">Golden Hour</button>
         <button class="palette-btn" data-palette="botanical">Botanical Calm</button>
         <button class="palette-btn" data-palette="terra">Terra Nova</button>
+        <button class="palette-btn" data-palette="vanevas">Vane-Vas</button>
       </div>
 
       <div class="swatches" id="swatchGrid">
@@ -1768,7 +1784,8 @@
         colors: {
           '--color-bg': '#050609', '--color-surface': '#1c1418', '--color-surface-2': '#2a2025',
           '--color-primary': '#F59356', '--color-secondary': '#F8EAE6', '--color-accent': '#3C0000',
-          '--color-text': '#F8EAE6', '--color-text-muted': '#F8EAE6', '--color-border': '#3a2e32'
+          '--color-text': '#F8EAE6', '--color-text-muted': '#F8EAE6', '--color-border': '#3a2e32',
+          '--font': "'Chillax', sans-serif", '--font-title': "'Chillax', sans-serif"
         },
         swatches: [
           { name: 'Black', hex: '#050609', dark: true },
@@ -1784,7 +1801,8 @@
         colors: {
           '--color-bg': '#FBF6F0', '--color-surface': '#FFFFFF', '--color-surface-2': '#F0E8DC',
           '--color-primary': '#C05835', '--color-secondary': '#C8943C', '--color-accent': '#EBBCB0',
-          '--color-text': '#2C1810', '--color-text-muted': '#8B6B52', '--color-border': '#E0D5C8'
+          '--color-text': '#2C1810', '--color-text-muted': '#8B6B52', '--color-border': '#E0D5C8',
+          '--font': "'Chillax', sans-serif", '--font-title': "'Chillax', sans-serif"
         },
         swatches: [
           { name: 'Cream', hex: '#FBF6F0', dark: false },
@@ -1800,7 +1818,8 @@
         colors: {
           '--color-bg': '#F5F0E8', '--color-surface': '#FDFCF8', '--color-surface-2': '#EBE5D8',
           '--color-primary': '#5C7050', '--color-secondary': '#C8B99A', '--color-accent': '#3C3C3C',
-          '--color-text': '#2C2C2C', '--color-text-muted': '#6B6B5F', '--color-border': '#D8D0C2'
+          '--color-text': '#2C2C2C', '--color-text-muted': '#6B6B5F', '--color-border': '#D8D0C2',
+          '--font': "'Chillax', sans-serif", '--font-title': "'Chillax', sans-serif"
         },
         swatches: [
           { name: 'Linen', hex: '#F5F0E8', dark: false },
@@ -1816,7 +1835,8 @@
         colors: {
           '--color-bg': '#F5F5E0', '--color-surface': '#FCFCF0', '--color-surface-2': '#E8E8CC',
           '--color-primary': '#A84F00', '--color-secondary': '#B58C91', '--color-accent': '#3A3B2F',
-          '--color-text': '#333333', '--color-text-muted': '#5A5A50', '--color-border': '#D0CCB0'
+          '--color-text': '#333333', '--color-text-muted': '#5A5A50', '--color-border': '#D0CCB0',
+          '--font': "'Chillax', sans-serif", '--font-title': "'Chillax', sans-serif"
         },
         swatches: [
           { name: 'Dark Olive', hex: '#3A3B2F', dark: true },
@@ -1824,6 +1844,23 @@
           { name: 'Dusty Rose', hex: '#B58C91', dark: false },
           { name: 'Warm Cream', hex: '#F5F5E0', dark: false },
           { name: 'Burnt Orange', hex: '#A84F00', dark: true }
+        ]
+      },
+      vanevas: {
+        name: 'Vane-Vas',
+        img: '',
+        colors: {
+          '--color-bg': '#F2D5BB', '--color-surface': '#A9C6D9', '--color-surface-2': '#A6826D',
+          '--color-primary': '#F2B544', '--color-secondary': '#A6826D', '--color-accent': '#73534C',
+          '--color-text': '#73534C', '--color-text-muted': '#73534c', '--color-border': '#A6826D',
+          '--font': "'Spinnaker', sans-serif", '--font-title': "'Against', sans-serif"
+        },
+        swatches: [
+          { name: 'Light Peach', hex: '#F2D5BB', dark: false },
+          { name: 'Sky Blue', hex: '#A9C6D9', dark: false },
+          { name: 'Golden Yellow', hex: '#F2B544', dark: false },
+          { name: 'Warm Taupe', hex: '#A6826D', dark: true },
+          { name: 'Dark Mocha', hex: '#73534C', dark: true }
         ]
       }
     };
