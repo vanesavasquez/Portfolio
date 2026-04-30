@@ -1099,7 +1099,65 @@
         font-size: .55rem
       }
 
-      .topnav {
+      /* ═══════════════════════════════════════════
+   VANE-VAS MINIMALIST THEME (AA COMPLIANT)
+   ═══════════════════════════════════════════ */
+    [data-theme="vanevas"] .btn--primary,
+    [data-theme="vanevas"] .btn--secondary,
+    [data-theme="vanevas"] .btn--accent {
+      background: transparent;
+      color: var(--color-text);
+    }
+    
+    [data-theme="vanevas"] .btn--primary { border: 2px solid var(--color-primary); }
+    [data-theme="vanevas"] .btn--secondary { border: 2px solid var(--color-secondary); }
+    [data-theme="vanevas"] .btn--accent { border: 2px solid var(--color-accent); }
+
+    [data-theme="vanevas"] .btn--primary:hover {
+      background: var(--color-primary);
+      color: var(--color-bg);
+    }
+    
+    [data-theme="vanevas"] .btn--secondary:hover {
+      background: var(--color-secondary);
+      color: var(--color-bg);
+    }
+
+    [data-theme="vanevas"] .btn--accent:hover {
+      background: var(--color-accent);
+      color: var(--color-bg);
+    }
+
+    [data-theme="vanevas"] .card {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      box-shadow: none;
+    }
+    
+    [data-theme="vanevas"] .card:hover {
+      box-shadow: var(--shadow-sm);
+    }
+
+    [data-theme="vanevas"] .chip {
+      background: transparent;
+    }
+
+    [data-theme="vanevas"] .chip--filter.active {
+      background: transparent;
+      border: 1.5px solid var(--color-primary);
+      color: var(--color-text);
+    }
+
+    [data-theme="vanevas"] .tag--primary,
+    [data-theme="vanevas"] .tag--secondary,
+    [data-theme="vanevas"] .tag--accent {
+      background: transparent;
+      color: var(--color-text);
+    }
+    
+    [data-theme="vanevas"] .tag--primary { border: 1px solid var(--color-primary); }
+    [data-theme="vanevas"] .tag--secondary { border: 1px solid var(--color-secondary); }
+    [data-theme="vanevas"] .tag--accent { border: 1px solid var(--color-accent); }   .topnav {
         flex-direction: column;
         gap: var(--sp-xs)
       }
@@ -1244,8 +1302,8 @@
   <section id="typography" class="section">
     <div class="container">
       <div class="section__label">02 — Tipografía</div>
-      <div class="section__title">Chillax</div>
-      <div class="section__desc">Una sola familia tipográfica, dramática y protagonista. Variable de 200 a 700, diseñada
+      <div id="typoTitle" class="section__title">Chillax</div>
+      <div id="typoDesc" class="section__desc">Una sola familia tipográfica, dramática y protagonista. Variable de 200 a 700, diseñada
         para impactar.</div>
 
       <div class="type-row">
@@ -1849,10 +1907,12 @@
       vanevas: {
         name: 'Vane-Vas',
         img: '',
+        typoTitle: 'Against & Spinnaker',
+        typoDesc: 'Against para títulos con un toque orgánico y expresivo, y Spinnaker para textos legibles y minimalistas.',
         colors: {
           '--color-bg': '#F2D5BB', '--color-surface': '#A9C6D9', '--color-surface-2': '#A6826D',
           '--color-primary': '#F2B544', '--color-secondary': '#A6826D', '--color-accent': '#73534C',
-          '--color-text': '#73534C', '--color-text-muted': '#73534c', '--color-border': '#A6826D',
+          '--color-text': '#5A3E39', '--color-text-muted': '#73534C', '--color-border': '#A6826D',
           '--font': "'Spinnaker', sans-serif", '--font-title': "'Against', sans-serif"
         },
         swatches: [
@@ -1860,7 +1920,7 @@
           { name: 'Sky Blue', hex: '#A9C6D9', dark: false },
           { name: 'Golden Yellow', hex: '#F2B544', dark: false },
           { name: 'Warm Taupe', hex: '#A6826D', dark: true },
-          { name: 'Dark Mocha', hex: '#73534C', dark: true }
+          { name: 'Dark Mocha', hex: '#5A3E39', dark: true }
         ]
       }
     };
@@ -1869,9 +1929,21 @@
     const swatchGrid = document.getElementById('swatchGrid');
     const paletteImg = document.getElementById('paletteImg').querySelector('img');
     const buttons = document.querySelectorAll('.palette-btn');
+    const typoTitle = document.getElementById('typoTitle');
+    const typoDesc = document.getElementById('typoDesc');
 
     function applyPalette(key) {
+      document.body.setAttribute('data-theme', key);
       const p = PALETTES[key];
+      // Typography strings
+      if (p.typoTitle) {
+        typoTitle.textContent = p.typoTitle;
+        typoDesc.textContent = p.typoDesc;
+      } else {
+        typoTitle.textContent = 'Chillax';
+        typoDesc.textContent = 'Una sola familia tipográfica, dramática y protagonista. Variable de 200 a 700, diseñada para impactar.';
+      }
+      
       // Apply CSS vars
       Object.entries(p.colors).forEach(([prop, val]) => root.style.setProperty(prop, val));
       // Swatches
