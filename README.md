@@ -15,7 +15,7 @@ Portfolio Vane/
 │
 ├── design-system/               ← Design System documentado
 │   ├── index.html               ← Página interactiva del DS
-│   └── fonts/                   ← Chillax Variable (woff2)
+│   └── fonts/                   ← Against, Spinnaker, Chillax
 │
 ├── assets/                      ← Recursos visuales
 │   ├── brand/                   ← Logo e identidad "Little Planet"
@@ -37,16 +37,16 @@ Portfolio Vane/
 
 Abrí `design-system/index.html` en tu navegador para explorar:
 
-- **4 paletas** intercambiables: Midnight Ember, Golden Hour, Botanical Calm, Terra Nova
-- **Tipografía** Chillax (200–700) con escala dramática
+- **5 paletas** intercambiables: Midnight Ember, Golden Hour, Botanical Calm, Terra Nova, Vane-Vas
+- **Tipografía** Against (títulos) + Spinnaker (cuerpo) con jerarquía AA compliant
 - **Spacing** sistema Fibonacci (base 4px)
 - **Grilla** 12 columnas tipo Bootstrap
 - **Componentes** botones, cards, inputs, tags
 
 ## 🛠️ Tecnología
 
-- **Desarrollo:** React (vanilla)
-- **Tipografía:** [Chillax](https://www.fontshare.com/fonts/chillax) — Indian Type Foundry
+- **Desarrollo:** React + Vite
+- **Tipografía:** [Against](https://www.fontshare.com/fonts/against) (títulos) · [Spinnaker](https://fonts.google.com/specimen/Spinnaker) (cuerpo)
 - **Grid:** 12 columnas, gap Fibonacci
 
 ## 📋 Paletas disponibles
@@ -57,3 +57,4 @@ Abrí `design-system/index.html` en tu navegador para explorar:
 | Golden Hour | `assets/palettes/Golden Hour.png` | Cálido, dorado, luminoso |
 | Botanical Calm | `assets/palettes/Botanical Calm.png` | Natural, minimalista, orgánico |
 | Terra Nova | `assets/palettes/Terra Nova.png` | Terroso, sofisticado, audaz |
+| Vane-Vas | — | Claro, accesible (AA), minimalista |
