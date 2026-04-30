@@ -10,29 +10,38 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Against';
+  src: url('/fonts/against regular.ttf') format('truetype');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Spinnaker';
+  src: url('/fonts/Spinnaker-Regular.ttf') format('truetype');
+  font-style: normal;
+}
+
 /* ═══════════════════════════════════════════
    CSS CUSTOM PROPERTIES / DESIGN TOKENS
-   Palette: Midnight Ember (Dark)
+   Palette: Vane-Vas (Light / AA Compliant)
    ═══════════════════════════════════════════ */
 :root {
   /* — Colors — */
-  --color-bg: #050609;
-  --color-surface: #1c1418;
-  --color-surface-2: #2a2025;
-  --color-primary: #F59356;
-  --color-secondary: #F8EAE6;
-  --color-accent: #3C0000;
-  --color-text: #F8EAE6;
-  --color-text-muted: rgba(248, 234, 230, 0.7);
-  --color-border: #3a2e32;
-  --color-swatch-1: #050609;
-  --color-swatch-2: #F8EAE6;
-  --color-swatch-3: #F59356;
-  --color-swatch-4: #C8937D;
-  --color-swatch-5: #3C0000;
+  --color-bg: #FAF5F0;
+  --color-surface: #A9C6D9;
+  --color-surface-2: #A6826D;
+  --color-primary: #F2B544;
+  --color-secondary: #A6826D;
+  --color-accent: #73534C;
+  --color-text: #5A3E39;
+  --color-text-muted: #73534C;
+  --color-border: #A6826D;
 
   /* — Typography — */
-  --font: 'Chillax', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font: 'Spinnaker', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-title: 'Against', sans-serif;
+  --font-body: 'Spinnaker', sans-serif;
 
   /* — Fibonacci Spacing (base 4px) — */
   --sp-2xs: 4px;
@@ -54,10 +63,10 @@
   --r-full: 9999px;
 
   /* — Shadows — */
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, .12);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, .15);
-  --shadow-lg: 0 12px 32px rgba(0, 0, 0, .2);
-  --shadow-xl: 0 20px 52px rgba(0, 0, 0, .25);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, .06);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, .08);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, .1);
+  --shadow-xl: 0 20px 52px rgba(0, 0, 0, .12);
 
   /* — Transitions — */
   --ease: cubic-bezier(.4, 0, .2, 1);
@@ -101,7 +110,7 @@ a {
 }
 
 a:hover {
-  color: var(--color-secondary);
+  color: var(--color-accent);
 }
 
 img {
@@ -202,14 +211,14 @@ button {
 
 .btn--primary {
   background: var(--color-primary);
-  color: var(--color-bg);
+  color: #5A3E39;
   border-color: var(--color-primary);
 }
 
 .btn--primary:hover {
   filter: brightness(1.1);
   transform: translateY(-2px);
-  box-shadow: 0 0 30px rgba(245, 147, 86, 0.3);
+  box-shadow: 0 0 30px rgba(242, 181, 68, 0.25);
 }
 
 .btn--outline {
@@ -220,7 +229,7 @@ button {
 
 .btn--outline:hover {
   background: var(--color-primary);
-  color: var(--color-bg);
+  color: #5A3E39;
 }
 
 .btn--ghost {
@@ -231,7 +240,7 @@ button {
 
 .btn--ghost:hover {
   background: var(--color-surface-2);
-  color: var(--color-primary);
+  color: #5A3E39;
 }
 
 /* ═══════════════════════════════════════════
@@ -308,7 +317,7 @@ button {
 
 .tag--active {
   background: var(--color-primary);
-  color: var(--color-bg);
+  color: #5A3E39;
   border-color: var(--color-primary);
 }
 
@@ -354,7 +363,7 @@ button {
    ═══════════════════════════════════════════ */
 ::selection {
   background: var(--color-primary);
-  color: var(--color-bg);
+  color: #5A3E39;
 }
 
 /* ═══════════════════════════════════════════
