@@ -6,17 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vanesa Vasquez — Design System</title>
   <style>
-    /* ═══════════════════════════════════════════
-   FONT FACE — Chillax Variable
-   ═══════════════════════════════════════════ */
-    @font-face {
-      font-family: 'Chillax';
-      src: url('./fonts/Chillax-Variable.woff2') format('woff2'),
-        url('./fonts/Chillax-Variable.woff') format('woff');
-      font-weight: 200 700;
-      font-display: swap;
-      font-style: normal;
-    }
+/* ═══════════════════════════════════════════
+    FONT FACE — Against & Spinnaker
+    ═══════════════════════════════════════════ */
 
     @font-face {
       font-family: 'Against';
@@ -31,34 +23,25 @@
     }
 
 /* ═══════════════════════════════════════════
-    CSS CUSTOM PROPERTIES / DESIGN TOKENS
-    ═══════════════════════════════════════════ */
-     :root {
-       /* — Default: Midnight Ember — */
-       --color-bg: #050609;
-       --color-surface: #1c1418;
-       --color-surface-2: #2a2025;
-       --color-primary: #F59356;
-       --color-secondary: #F8EAE6;
-       --color-accent: #3C0000;
-       --color-text: #F8EAE6;
-       --color-text-muted: #F8EAE6;
-       --color-border: #3a2e32;
-       --color-swatch-1: #050609;
-       --color-swatch-2: #F8EAE6;
-       --color-swatch-3: #F59356;
-       --color-swatch-4: #C8937D;
-       --color-swatch-5: #3C0000;
-       --swatch-name-1: "Black";
-       --swatch-name-2: "Almond Silk";
-       --swatch-name-3: "Tangerine Dream";
-       --swatch-name-4: "Toffee Brown";
-       --swatch-name-5: "Rich Mahogany";
+     CSS CUSTOM PROPERTIES / DESIGN TOKENS
+     Palette: Vane-Vas (Light / AA Compliant)
+     ═══════════════════════════════════════════ */
+      :root {
+        /* — Colors — */
+        --color-bg: #FAF5F0;
+        --color-surface: #A9C6D9;
+        --color-surface-2: #A6826D;
+        --color-primary: #F2B544;
+        --color-secondary: #A6826D;
+        --color-accent: #73534C;
+        --color-text: #5A3E39;
+        --color-text-muted: #73534C;
+        --color-border: #A6826D;
 
-       /* — Typography — */
-       --font: 'Chillax', sans-serif;
-       --font-title: 'Chillax', sans-serif;
-       --font-body: 'Spinnaker', sans-serif;
+        /* — Typography — */
+        --font: 'Spinnaker', sans-serif;
+        --font-title: 'Against', sans-serif;
+        --font-body: 'Spinnaker', sans-serif;
 
       /* — Fibonacci Spacing (base 4px) — */
       --sp-2xs: 4px;
@@ -489,7 +472,7 @@
       display: inline-block;
       padding: var(--sp-sm) var(--sp-lg);
       background: var(--color-primary);
-      color: var(--color-bg);
+      color: #5A3E39;
       font-weight: 600;
       border-radius: var(--r-full);
       font-size: .85rem;
@@ -844,7 +827,7 @@
 
     .input:focus {
       border-color: var(--color-primary);
-      box-shadow: 0 0 0 3px rgba(245, 147, 86, .2)
+      box-shadow: 0 0 0 3px rgba(242, 181, 68, .25)
     }
 
     .input::placeholder {
@@ -1044,7 +1027,7 @@
 
     .chip--link:hover {
       background: var(--color-primary);
-      color: var(--color-bg)
+      color: #5A3E39
     }
 
     .chip--filter {
@@ -1101,85 +1084,87 @@
         padding: var(--sp-2xs);
         font-size: .55rem
       }
+    }
 
       /* ═══════════════════════════════════════════
-   VANE-VAS MINIMALIST THEME (AA COMPLIANT)
-   ═══════════════════════════════════════════ */
-    [data-theme="vanevas"] .btn--primary,
-    [data-theme="vanevas"] .btn--secondary,
-    [data-theme="vanevas"] .btn--accent {
+    VANE-VAS THEME RULES (AA COMPLIANT)
+    ═══════════════════════════════════════════ */
+    .btn--primary,
+    .btn--secondary,
+    .btn--accent {
       background: transparent;
       color: var(--color-text);
     }
     
-    [data-theme="vanevas"] .btn--primary { border: 2px solid var(--color-primary); }
-    [data-theme="vanevas"] .btn--secondary { border: 2px solid var(--color-secondary); }
-    [data-theme="vanevas"] .btn--accent { border: 2px solid var(--color-accent); }
+    .btn--primary { border: 2px solid var(--color-primary); }
+    .btn--secondary { border: 2px solid var(--color-secondary); }
+    .btn--accent { border: 2px solid var(--color-accent); }
 
-    [data-theme="vanevas"] .btn--primary:hover {
+    .btn--primary:hover {
       background: var(--color-primary);
-      color: var(--color-bg);
+      color: #5A3E39;
     }
     
-    [data-theme="vanevas"] .btn--secondary:hover {
+    .btn--secondary:hover {
       background: var(--color-secondary);
-      color: var(--color-bg);
+      color: #FAF5F0;
     }
 
-    [data-theme="vanevas"] .btn--accent:hover {
+    .btn--accent:hover {
       background: var(--color-accent);
-      color: var(--color-bg);
+      color: #FAF5F0;
     }
 
-    [data-theme="vanevas"] .card {
+    .card {
       background: var(--color-bg);
       border: 1px solid var(--color-border);
       box-shadow: none;
     }
     
-    [data-theme="vanevas"] .card:hover {
+    .card:hover {
       box-shadow: var(--shadow-sm);
     }
 
-    [data-theme="vanevas"] .chip {
+    .chip {
       background: transparent;
     }
 
-    [data-theme="vanevas"] .chip--filter.active {
+    .chip--filter.active {
       background: transparent;
       border: 1.5px solid var(--color-primary);
       color: var(--color-text);
     }
 
-    [data-theme="vanevas"] .input {
+    .input {
       background: #F2F5F8;
     }
 
-    [data-theme="vanevas"] .tag--primary,
-    [data-theme="vanevas"] .tag--secondary,
-    [data-theme="vanevas"] .tag--accent {
+    .tag--primary,
+    .tag--secondary,
+    .tag--accent {
       background: transparent;
       color: var(--color-text);
     }
     
-    [data-theme="vanevas"] .tag--primary { border: 1px solid var(--color-primary); }
-    [data-theme="vanevas"] .tag--secondary { border: 1px solid var(--color-secondary); }
-    [data-theme="vanevas"] .tag--accent { border: 1px solid var(--color-accent); }
+    .tag--primary { border: 1px solid var(--color-primary); }
+    .tag--secondary { border: 1px solid var(--color-secondary); }
+    .tag--accent { border: 1px solid var(--color-accent); }
 
     /* Forzar pesos para Spinnaker (que solo tiene Regular nativo) */
-    [data-theme="vanevas"] .type-sample[style*="font-weight:600"],
-    [data-theme="vanevas"] .type-sample[style*="font-weight:700"],
-    [data-theme="vanevas"] .weight-demo[style*="font-weight:600"],
-    [data-theme="vanevas"] .weight-demo[style*="font-weight:700"] {
+    .type-sample[style*="font-weight:600"],
+    .type-sample[style*="font-weight:700"],
+    .weight-demo[style*="font-weight:600"],
+    .weight-demo[style*="font-weight:700"] {
       -webkit-text-stroke: 1px currentColor;
     }
-    [data-theme="vanevas"] .type-sample[style*="font-weight:200"],
-    [data-theme="vanevas"] .type-sample[style*="font-weight:300"],
-    [data-theme="vanevas"] .weight-demo[style*="font-weight:200"],
-    [data-theme="vanevas"] .weight-demo[style*="font-weight:300"] {
+    .type-sample[style*="font-weight:200"],
+    .type-sample[style*="font-weight:300"],
+    .weight-demo[style*="font-weight:200"],
+    .weight-demo[style*="font-weight:300"] {
       opacity: 0.8;
     }
 
+    @media(max-width:768px) {
     .topnav {
         flex-direction: column;
         gap: var(--sp-xs)
@@ -1257,23 +1242,14 @@
     <div class="container">
       <div class="section__label">01 — Identidad Visual</div>
       <div class="section__title">Paletas<br>de Color</div>
-      <div class="section__desc">Cuatro direcciones cromáticas para explorar. Seleccioná una paleta para ver cómo
-        transforma todo el sistema.</div>
+      <div class="section__desc">Paleta única Vane-Vas. Colores cálidos y accesibles que definen toda la identidad visual.</div>
 
       <div class="palette-selector">
-        <button class="palette-btn active" data-palette="midnight">Midnight Ember</button>
-        <button class="palette-btn" data-palette="golden">Golden Hour</button>
-        <button class="palette-btn" data-palette="botanical">Botanical Calm</button>
-        <button class="palette-btn" data-palette="terra">Terra Nova</button>
-        <button class="palette-btn" data-palette="vanevas">Vane-Vas</button>
+        <button class="palette-btn active" data-palette="vanevas">Vane-Vas</button>
       </div>
 
       <div class="swatches" id="swatchGrid">
         <!-- Filled by JS -->
-      </div>
-
-      <div class="palette-img-wrap" id="paletteImg">
-        <img src="../assets/palettes/Midnight Ember.png" alt="Paleta activa">
       </div>
 
       <div class="section__label" style="margin-top:var(--sp-xl)">Graduaciones · 100–1000</div>
@@ -1325,9 +1301,8 @@
   <section id="typography" class="section">
     <div class="container">
       <div class="section__label">02 — Tipografía</div>
-      <div id="typoTitle" class="section__title">Chillax</div>
-      <div id="typoDesc" class="section__desc">Una sola familia tipográfica, dramática y protagonista. Variable de 200 a 700, diseñada
-        para impactar.</div>
+      <div id="typoTitle" class="section__title">Against &amp; Spinnaker</div>
+      <div id="typoDesc" class="section__desc">Against para títulos con un toque orgánico y expresivo, y Spinnaker para textos legibles y minimalistas.</div>
 
       <div class="type-row">
         <div class="type-meta">
@@ -1863,133 +1838,44 @@
       }).join('');
     }
 
-    const PALETTES = {
-      midnight: {
-        name: 'Midnight Ember',
-        img: '../assets/palettes/Midnight Ember.png',
-        colors: {
-          '--color-bg': '#050609', '--color-surface': '#1c1418', '--color-surface-2': '#2a2025',
-          '--color-primary': '#F59356', '--color-secondary': '#F8EAE6', '--color-accent': '#3C0000',
-          '--color-text': '#F8EAE6', '--color-text-muted': '#F8EAE6', '--color-border': '#3a2e32',
-          '--font': "'Chillax', sans-serif", '--font-title': "'Chillax', sans-serif"
-        },
-        swatches: [
-          { name: 'Black', hex: '#050609', dark: true },
-          { name: 'Almond Silk', hex: '#F8EAE6', dark: false },
-          { name: 'Tangerine Dream', hex: '#F59356', dark: false },
-          { name: 'Toffee Brown', hex: '#C8937D', dark: true },
-          { name: 'Rich Mahogany', hex: '#3C0000', dark: true }
-        ]
+    const PALETTE = {
+      name: 'Vane-Vas',
+      typoTitle: 'Against &amp; Spinnaker',
+      typoDesc: 'Against para títulos con un toque orgánico y expresivo, y Spinnaker para textos legibles y minimalistas.',
+      colors: {
+        '--color-bg': '#FAF5F0', '--color-surface': '#A9C6D9', '--color-surface-2': '#A6826D',
+        '--color-primary': '#F2B544', '--color-secondary': '#A6826D', '--color-accent': '#73534C',
+        '--color-text': '#5A3E39', '--color-text-muted': '#73534C', '--color-border': '#A6826D',
+        '--font': "'Spinnaker', sans-serif", '--font-title': "'Against', sans-serif"
       },
-      golden: {
-        name: 'Golden Hour',
-        img: '../assets/palettes/Golden Hour.png',
-        colors: {
-          '--color-bg': '#FBF6F0', '--color-surface': '#FFFFFF', '--color-surface-2': '#F0E8DC',
-          '--color-primary': '#C05835', '--color-secondary': '#C8943C', '--color-accent': '#EBBCB0',
-          '--color-text': '#2C1810', '--color-text-muted': '#8B6B52', '--color-border': '#E0D5C8',
-          '--font': "'Chillax', sans-serif", '--font-title': "'Chillax', sans-serif"
-        },
-        swatches: [
-          { name: 'Cream', hex: '#FBF6F0', dark: false },
-          { name: 'Ochre Gold', hex: '#C8943C', dark: false },
-          { name: 'Soft Rose', hex: '#EBBCB0', dark: false },
-          { name: 'Burnt Sienna', hex: '#C05835', dark: true },
-          { name: 'Dark Cocoa', hex: '#2C1810', dark: true }
-        ]
-      },
-      botanical: {
-        name: 'Botanical Calm',
-        img: '../assets/palettes/Botanical Calm.png',
-        colors: {
-          '--color-bg': '#F5F0E8', '--color-surface': '#FDFCF8', '--color-surface-2': '#EBE5D8',
-          '--color-primary': '#5C7050', '--color-secondary': '#C8B99A', '--color-accent': '#3C3C3C',
-          '--color-text': '#2C2C2C', '--color-text-muted': '#6B6B5F', '--color-border': '#D8D0C2',
-          '--font': "'Chillax', sans-serif", '--font-title': "'Chillax', sans-serif"
-        },
-        swatches: [
-          { name: 'Linen', hex: '#F5F0E8', dark: false },
-          { name: 'Sand', hex: '#C8B99A', dark: false },
-          { name: 'Sage Green', hex: '#5C7050', dark: true },
-          { name: 'Charcoal', hex: '#3C3C3C', dark: true },
-          { name: 'Cream White', hex: '#FDFCF8', dark: false }
-        ]
-      },
-      terra: {
-        name: 'Terra Nova',
-        img: '../assets/palettes/Terra Nova.png',
-        colors: {
-          '--color-bg': '#F5F5E0', '--color-surface': '#FCFCF0', '--color-surface-2': '#E8E8CC',
-          '--color-primary': '#A84F00', '--color-secondary': '#B58C91', '--color-accent': '#3A3B2F',
-          '--color-text': '#333333', '--color-text-muted': '#5A5A50', '--color-border': '#D0CCB0',
-          '--font': "'Chillax', sans-serif", '--font-title': "'Chillax', sans-serif"
-        },
-        swatches: [
-          { name: 'Dark Olive', hex: '#3A3B2F', dark: true },
-          { name: 'Dark Gray', hex: '#333333', dark: true },
-          { name: 'Dusty Rose', hex: '#B58C91', dark: false },
-          { name: 'Warm Cream', hex: '#F5F5E0', dark: false },
-          { name: 'Burnt Orange', hex: '#A84F00', dark: true }
-        ]
-      },
-      vanevas: {
-        name: 'Vane-Vas',
-        img: '',
-        typoTitle: 'Against & Spinnaker',
-        typoDesc: 'Against para títulos con un toque orgánico y expresivo, y Spinnaker para textos legibles y minimalistas.',
-        colors: {
-          '--color-bg': '#FAF5F0', '--color-surface': '#A9C6D9', '--color-surface-2': '#A6826D',
-          '--color-primary': '#F2B544', '--color-secondary': '#A6826D', '--color-accent': '#73534C',
-          '--color-text': '#5A3E39', '--color-text-muted': '#73534C', '--color-border': '#A6826D',
-          '--font': "'Spinnaker', sans-serif", '--font-title': "'Against', sans-serif"
-        },
-        swatches: [
-          { name: 'Light Peach', hex: '#F2D5BB', dark: false },
-          { name: 'Sky Blue', hex: '#A9C6D9', dark: false },
-          { name: 'Golden Yellow', hex: '#F2B544', dark: false },
-          { name: 'Warm Taupe', hex: '#A6826D', dark: true },
-          { name: 'Dark Mocha', hex: '#5A3E39', dark: true }
-        ]
-      }
+      swatches: [
+        { name: 'Light Peach', hex: '#F2D5BB', dark: false },
+        { name: 'Sky Blue', hex: '#A9C6D9', dark: false },
+        { name: 'Golden Yellow', hex: '#F2B544', dark: false },
+        { name: 'Warm Taupe', hex: '#A6826D', dark: true },
+        { name: 'Dark Mocha', hex: '#5A3E39', dark: true }
+      ]
     };
 
     const root = document.documentElement;
     const swatchGrid = document.getElementById('swatchGrid');
-    const paletteImg = document.getElementById('paletteImg').querySelector('img');
-    const buttons = document.querySelectorAll('.palette-btn');
     const typoTitle = document.getElementById('typoTitle');
     const typoDesc = document.getElementById('typoDesc');
 
-    function applyPalette(key) {
-      document.body.setAttribute('data-theme', key);
-      const p = PALETTES[key];
-      // Typography strings
-      if (p.typoTitle) {
-        typoTitle.textContent = p.typoTitle;
-        typoDesc.textContent = p.typoDesc;
-      } else {
-        typoTitle.textContent = 'Chillax';
-        typoDesc.textContent = 'Una sola familia tipográfica, dramática y protagonista. Variable de 200 a 700, diseñada para impactar.';
-      }
-      
-      // Apply CSS vars
+    function applyTheme() {
+      const p = PALETTE;
+      typoTitle.textContent = p.typoTitle;
+      typoDesc.textContent = p.typoDesc;
       Object.entries(p.colors).forEach(([prop, val]) => root.style.setProperty(prop, val));
-      // Swatches
       swatchGrid.innerHTML = p.swatches.map(s => `
     <div class="swatch ${s.dark ? 'swatch--dark' : 'swatch--light'}" style="background:${s.hex}">
       <div class="swatch__name">${s.name}</div>
       <div class="swatch__hex">${s.hex}</div>
     </div>`).join('');
-      // Shades
       renderShades(p.swatches);
-      // Image
-      paletteImg.src = p.img;
-      paletteImg.alt = p.name;
-      // Buttons
-      buttons.forEach(b => b.classList.toggle('active', b.dataset.palette === key));
     }
 
-    buttons.forEach(b => b.addEventListener('click', () => applyPalette(b.dataset.palette)));
+    applyTheme();
 
     // Chip interactions
     document.addEventListener('click', e => {
@@ -2010,7 +1896,7 @@
     });
 
     // Init
-    applyPalette('midnight');
+    applyTheme();
   </script>
 </body>
 
