@@ -30,34 +30,35 @@
       font-style: normal;
     }
 
-    /* ═══════════════════════════════════════════
-   CSS CUSTOM PROPERTIES / DESIGN TOKENS
-   ═══════════════════════════════════════════ */
-    :root {
-      /* — Default: Midnight Ember — */
-      --color-bg: #050609;
-      --color-surface: #1c1418;
-      --color-surface-2: #2a2025;
-      --color-primary: #F59356;
-      --color-secondary: #F8EAE6;
-      --color-accent: #3C0000;
-      --color-text: #F8EAE6;
-      --color-text-muted: #F8EAE6;
-      --color-border: #3a2e32;
-      --color-swatch-1: #050609;
-      --color-swatch-2: #F8EAE6;
-      --color-swatch-3: #F59356;
-      --color-swatch-4: #C8937D;
-      --color-swatch-5: #3C0000;
-      --swatch-name-1: "Black";
-      --swatch-name-2: "Almond Silk";
-      --swatch-name-3: "Tangerine Dream";
-      --swatch-name-4: "Toffee Brown";
-      --swatch-name-5: "Rich Mahogany";
+/* ═══════════════════════════════════════════
+    CSS CUSTOM PROPERTIES / DESIGN TOKENS
+    ═══════════════════════════════════════════ */
+     :root {
+       /* — Default: Midnight Ember — */
+       --color-bg: #050609;
+       --color-surface: #1c1418;
+       --color-surface-2: #2a2025;
+       --color-primary: #F59356;
+       --color-secondary: #F8EAE6;
+       --color-accent: #3C0000;
+       --color-text: #F8EAE6;
+       --color-text-muted: #F8EAE6;
+       --color-border: #3a2e32;
+       --color-swatch-1: #050609;
+       --color-swatch-2: #F8EAE6;
+       --color-swatch-3: #F59356;
+       --color-swatch-4: #C8937D;
+       --color-swatch-5: #3C0000;
+       --swatch-name-1: "Black";
+       --swatch-name-2: "Almond Silk";
+       --swatch-name-3: "Tangerine Dream";
+       --swatch-name-4: "Toffee Brown";
+       --swatch-name-5: "Rich Mahogany";
 
-      /* — Typography — */
-      --font: 'Chillax', sans-serif;
-      --font-title: 'Chillax', sans-serif;
+       /* — Typography — */
+       --font: 'Chillax', sans-serif;
+       --font-title: 'Chillax', sans-serif;
+       --font-body: 'Spinnaker', sans-serif;
 
       /* — Fibonacci Spacing (base 4px) — */
       --sp-2xs: 4px;
@@ -255,7 +256,7 @@
     .palette-btn.active {
       background: var(--color-primary);
       border-color: var(--color-primary);
-      color: var(--color-bg);
+      color: #5A3E39;
       font-weight: 600
     }
 
@@ -547,6 +548,7 @@
       padding: var(--sp-md) 0;
       border-bottom: 1px solid var(--color-border);
       transition: border-color .5s var(--ease);
+      font-family: var(--font-body);
     }
 
     .type-meta {
@@ -872,6 +874,7 @@
       letter-spacing: .04em;
       text-transform: uppercase;
       transition: all .3s var(--ease);
+      font-family: var(--font-body);
     }
 
     .tag--primary {
@@ -1053,7 +1056,7 @@
     .chip--filter.active {
       background: var(--color-primary);
       border-color: var(--color-primary);
-      color: var(--color-bg);
+      color: #5A3E39;
       font-weight: 600
     }
 
@@ -1370,28 +1373,28 @@
           <div class="type-meta__name">H4</div>
           <div class="type-meta__spec">32px / 500</div>
         </div>
-        <div class="type-sample" style="font-size:2rem;font-weight:500;line-height:1.25">UX Research</div>
+        <div class="type-sample" style="font-family:var(--font-body);font-size:2rem;font-weight:500;line-height:1.25">UX Research</div>
       </div>
       <div class="type-row">
         <div class="type-meta">
           <div class="type-meta__name">H5</div>
           <div class="type-meta__spec">24px / 500</div>
         </div>
-        <div class="type-sample" style="font-size:1.5rem;font-weight:500;line-height:1.3">Prototyping</div>
+        <div class="type-sample" style="font-family:var(--font-body);font-size:1.5rem;font-weight:500;line-height:1.3">Prototyping</div>
       </div>
       <div class="type-row">
         <div class="type-meta">
           <div class="type-meta__name">H6</div>
           <div class="type-meta__spec">20px / 500</div>
         </div>
-        <div class="type-sample" style="font-size:1.25rem;font-weight:500;line-height:1.4">Visual Design</div>
+        <div class="type-sample" style="font-family:var(--font-body);font-size:1.25rem;font-weight:500;line-height:1.4">Visual Design</div>
       </div>
       <div class="type-row">
         <div class="type-meta">
           <div class="type-meta__name">Subtitle</div>
           <div class="type-meta__spec">18px / 500</div>
         </div>
-        <div class="type-sample" style="font-size:1.125rem;font-weight:500;line-height:1.5">Creando experiencias
+        <div class="type-sample" style="font-family:var(--font-body);font-size:1.125rem;font-weight:500;line-height:1.5">Creando experiencias
           digitales memorables</div>
       </div>
       <div class="type-row">
@@ -1399,7 +1402,7 @@
           <div class="type-meta__name">Body Large</div>
           <div class="type-meta__spec">18px / 400</div>
         </div>
-        <div class="type-sample" style="font-size:1.125rem;font-weight:400;line-height:1.6">Diseñadora UX/UI con pasión
+        <div class="type-sample" style="font-family:var(--font-body);font-size:1.125rem;font-weight:400;line-height:1.6">Diseñadora UX/UI con pasión
           por crear interfaces que conectan con las personas.</div>
       </div>
       <div class="type-row">
@@ -1407,7 +1410,7 @@
           <div class="type-meta__name">Body</div>
           <div class="type-meta__spec">16px / 400</div>
         </div>
-        <div class="type-sample" style="font-size:1rem;font-weight:400;line-height:1.6">Cada proyecto es una oportunidad
+        <div class="type-sample" style="font-family:var(--font-body);font-size:1rem;font-weight:400;line-height:1.6">Cada proyecto es una oportunidad
           para resolver problemas reales con diseño centrado en el usuario.</div>
       </div>
       <div class="type-row">
@@ -1415,7 +1418,7 @@
           <div class="type-meta__name">Body Small</div>
           <div class="type-meta__spec">14px / 400</div>
         </div>
-        <div class="type-sample" style="font-size:.875rem;font-weight:400;line-height:1.5">Investigación, prototipado,
+        <div class="type-sample" style="font-family:var(--font-body);font-size:.875rem;font-weight:400;line-height:1.5">Investigación, prototipado,
           testing y entrega de diseño con alto nivel de detalle.</div>
       </div>
       <div class="type-row">
@@ -1423,7 +1426,7 @@
           <div class="type-meta__name">Caption</div>
           <div class="type-meta__spec">12px / 300</div>
         </div>
-        <div class="type-sample" style="font-size:.75rem;font-weight:300;line-height:1.4">Última actualización: Marzo
+        <div class="type-sample" style="font-family:var(--font-body);font-size:.75rem;font-weight:300;line-height:1.4">Última actualización: Marzo
           2026</div>
       </div>
       <div class="type-row">
@@ -1444,32 +1447,37 @@
           <div><span
               style="font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--color-text-muted)">Extralight
               — 200</span>
-            <div class="weight-demo" style="font-size:2.5rem;font-weight:200;line-height:1.2;margin-top:var(--sp-2xs)">Chillax</div>
+            <div class="weight-demo" style="font-family:var(--font-body);font-size:2.5rem;font-weight:200;line-height:1.2;margin-top:var(--sp-2xs);opacity:0.7">Spinnaker</div>
           </div>
           <div><span
               style="font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--color-text-muted)">Light
               — 300</span>
-            <div class="weight-demo" style="font-size:2.5rem;font-weight:300;line-height:1.2;margin-top:var(--sp-2xs)">Chillax</div>
+            <div class="weight-demo" style="font-family:var(--font-body);font-size:2.5rem;font-weight:300;line-height:1.2;margin-top:var(--sp-2xs);opacity:0.85">Spinnaker</div>
           </div>
-          <div><span
+<div><span
               style="font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--color-text-muted)">Regular
               — 400</span>
-            <div class="weight-demo" style="font-size:2.5rem;font-weight:400;line-height:1.2;margin-top:var(--sp-2xs)">Chillax</div>
-          </div>
-          <div><span
-              style="font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--color-text-muted)">Medium
-              — 500</span>
-            <div class="weight-demo" style="font-size:2.5rem;font-weight:500;line-height:1.2;margin-top:var(--sp-2xs)">Chillax</div>
-          </div>
-          <div><span
-              style="font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--color-text-muted)">Semibold
-              — 600</span>
-            <div class="weight-demo" style="font-size:2.5rem;font-weight:600;line-height:1.2;margin-top:var(--sp-2xs)">Chillax</div>
+            <div class="weight-demo" style="font-family:var(--font-body);font-size:2.5rem;font-weight:400;line-height:1.2;margin-top:var(--sp-2xs)">Spinnaker</div>
           </div>
           <div><span
               style="font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--color-text-muted)">Bold
               — 700</span>
-            <div class="weight-demo" style="font-size:2.5rem;font-weight:700;line-height:1.2;margin-top:var(--sp-2xs)">Chillax</div>
+            <div class="weight-demo" style="font-family:var(--font-body);font-size:2.5rem;font-weight:700;line-height:1.2;margin-top:var(--sp-2xs)">Spinnaker</div>
+          </div>
+          <div><span
+              style="font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--color-text-muted)">Medium
+              — 500</span>
+            <div class="weight-demo" style="font-family:var(--font-body);font-size:2.5rem;font-weight:500;line-height:1.2;margin-top:var(--sp-2xs)">Spinnaker</div>
+          </div>
+          <div><span
+              style="font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--color-text-muted)">Semibold
+              — 600</span>
+            <div class="weight-demo" style="font-family:var(--font-body);font-size:2.5rem;font-weight:600;line-height:1.2;margin-top:var(--sp-2xs)">Spinnaker</div>
+          </div>
+          <div><span
+              style="font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--color-text-muted)">Bold
+              — 700</span>
+            <div class="weight-demo" style="font-family:var(--font-body);font-size:2.5rem;font-weight:700;line-height:1.2;margin-top:var(--sp-2xs)">Spinnaker</div>
           </div>
         </div>
       </div>
@@ -1926,7 +1934,7 @@
         typoTitle: 'Against & Spinnaker',
         typoDesc: 'Against para títulos con un toque orgánico y expresivo, y Spinnaker para textos legibles y minimalistas.',
         colors: {
-          '--color-bg': '#F2D5BB', '--color-surface': '#A9C6D9', '--color-surface-2': '#A6826D',
+          '--color-bg': '#FAF5F0', '--color-surface': '#A9C6D9', '--color-surface-2': '#A6826D',
           '--color-primary': '#F2B544', '--color-secondary': '#A6826D', '--color-accent': '#73534C',
           '--color-text': '#5A3E39', '--color-text-muted': '#73534C', '--color-border': '#A6826D',
           '--font': "'Spinnaker', sans-serif", '--font-title': "'Against', sans-serif"
