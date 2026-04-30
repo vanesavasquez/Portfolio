@@ -1157,7 +1157,23 @@
     
     [data-theme="vanevas"] .tag--primary { border: 1px solid var(--color-primary); }
     [data-theme="vanevas"] .tag--secondary { border: 1px solid var(--color-secondary); }
-    [data-theme="vanevas"] .tag--accent { border: 1px solid var(--color-accent); }   .topnav {
+    [data-theme="vanevas"] .tag--accent { border: 1px solid var(--color-accent); }
+
+    /* Forzar pesos para Spinnaker (que solo tiene Regular nativo) */
+    [data-theme="vanevas"] .type-sample[style*="font-weight:600"],
+    [data-theme="vanevas"] .type-sample[style*="font-weight:700"],
+    [data-theme="vanevas"] .weight-demo[style*="font-weight:600"],
+    [data-theme="vanevas"] .weight-demo[style*="font-weight:700"] {
+      -webkit-text-stroke: 1px currentColor;
+    }
+    [data-theme="vanevas"] .type-sample[style*="font-weight:200"],
+    [data-theme="vanevas"] .type-sample[style*="font-weight:300"],
+    [data-theme="vanevas"] .weight-demo[style*="font-weight:200"],
+    [data-theme="vanevas"] .weight-demo[style*="font-weight:300"] {
+      opacity: 0.8;
+    }
+
+    .topnav {
         flex-direction: column;
         gap: var(--sp-xs)
       }
@@ -1312,7 +1328,7 @@
           <div class="type-meta__spec">120px / 700 / -0.04em</div>
         </div>
         <div class="type-sample"
-          style="font-size:clamp(3rem,8vw,7.5rem);font-weight:700;line-height:1;letter-spacing:-.04em">Vanesa</div>
+          style="font-family:var(--font-title, var(--font));font-size:clamp(3rem,8vw,7.5rem);font-weight:700;line-height:1;letter-spacing:-.04em">Vanesa</div>
       </div>
       <div class="type-row">
         <div class="type-meta">
@@ -1320,7 +1336,7 @@
           <div class="type-meta__spec">96px / 700 / -0.03em</div>
         </div>
         <div class="type-sample"
-          style="font-size:clamp(2.5rem,6vw,6rem);font-weight:700;line-height:1;letter-spacing:-.03em">Vasquez</div>
+          style="font-family:var(--font-title, var(--font));font-size:clamp(2.5rem,6vw,6rem);font-weight:700;line-height:1;letter-spacing:-.03em">Vasquez</div>
       </div>
       <div class="type-row">
         <div class="type-meta">
@@ -1328,7 +1344,7 @@
           <div class="type-meta__spec">72px / 700 / -0.02em</div>
         </div>
         <div class="type-sample"
-          style="font-size:clamp(2rem,5vw,4.5rem);font-weight:700;line-height:1.1;letter-spacing:-.02em">Build Better
+          style="font-family:var(--font-title, var(--font));font-size:clamp(2rem,5vw,4.5rem);font-weight:700;line-height:1.1;letter-spacing:-.02em">Build Better
         </div>
       </div>
       <div class="type-row">
@@ -1337,7 +1353,7 @@
           <div class="type-meta__spec">56px / 600 / -0.02em</div>
         </div>
         <div class="type-sample"
-          style="font-size:clamp(1.75rem,4vw,3.5rem);font-weight:600;line-height:1.15;letter-spacing:-.02em">Stay Strong
+          style="font-family:var(--font-title, var(--font));font-size:clamp(1.75rem,4vw,3.5rem);font-weight:600;line-height:1.15;letter-spacing:-.02em">Stay Strong
         </div>
       </div>
       <div class="type-row">
@@ -1346,7 +1362,7 @@
           <div class="type-meta__spec">40px / 600 / -0.01em</div>
         </div>
         <div class="type-sample"
-          style="font-size:clamp(1.5rem,3vw,2.5rem);font-weight:600;line-height:1.2;letter-spacing:-.01em">Design
+          style="font-family:var(--font-title, var(--font));font-size:clamp(1.5rem,3vw,2.5rem);font-weight:600;line-height:1.2;letter-spacing:-.01em">Design
           Systems</div>
       </div>
       <div class="type-row">
@@ -1428,32 +1444,32 @@
           <div><span
               style="font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--color-text-muted)">Extralight
               — 200</span>
-            <div style="font-size:2.5rem;font-weight:200;line-height:1.2;margin-top:var(--sp-2xs)">Chillax</div>
+            <div class="weight-demo" style="font-size:2.5rem;font-weight:200;line-height:1.2;margin-top:var(--sp-2xs)">Chillax</div>
           </div>
           <div><span
               style="font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--color-text-muted)">Light
               — 300</span>
-            <div style="font-size:2.5rem;font-weight:300;line-height:1.2;margin-top:var(--sp-2xs)">Chillax</div>
+            <div class="weight-demo" style="font-size:2.5rem;font-weight:300;line-height:1.2;margin-top:var(--sp-2xs)">Chillax</div>
           </div>
           <div><span
               style="font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--color-text-muted)">Regular
               — 400</span>
-            <div style="font-size:2.5rem;font-weight:400;line-height:1.2;margin-top:var(--sp-2xs)">Chillax</div>
+            <div class="weight-demo" style="font-size:2.5rem;font-weight:400;line-height:1.2;margin-top:var(--sp-2xs)">Chillax</div>
           </div>
           <div><span
               style="font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--color-text-muted)">Medium
               — 500</span>
-            <div style="font-size:2.5rem;font-weight:500;line-height:1.2;margin-top:var(--sp-2xs)">Chillax</div>
+            <div class="weight-demo" style="font-size:2.5rem;font-weight:500;line-height:1.2;margin-top:var(--sp-2xs)">Chillax</div>
           </div>
           <div><span
               style="font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--color-text-muted)">Semibold
               — 600</span>
-            <div style="font-size:2.5rem;font-weight:600;line-height:1.2;margin-top:var(--sp-2xs)">Chillax</div>
+            <div class="weight-demo" style="font-size:2.5rem;font-weight:600;line-height:1.2;margin-top:var(--sp-2xs)">Chillax</div>
           </div>
           <div><span
               style="font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--color-text-muted)">Bold
               — 700</span>
-            <div style="font-size:2.5rem;font-weight:700;line-height:1.2;margin-top:var(--sp-2xs)">Chillax</div>
+            <div class="weight-demo" style="font-size:2.5rem;font-weight:700;line-height:1.2;margin-top:var(--sp-2xs)">Chillax</div>
           </div>
         </div>
       </div>
