@@ -15,7 +15,7 @@ Portfolio Vane/
 │
 ├── design-system/               ← Design System documentado
 │   ├── index.html               ← Página interactiva del DS
-│   └── fonts/                   ← Against, Spinnaker, Chillax
+│   └── fonts/                   ← Against, Spinnaker
 │
 ├── assets/                      ← Recursos visuales
 │   ├── brand/                   ← Logo e identidad "Little Planet"
@@ -37,8 +37,8 @@ Portfolio Vane/
 
 Abrí `design-system/index.html` en tu navegador para explorar:
 
-- **5 paletas** intercambiables: Midnight Ember, Golden Hour, Botanical Calm, Terra Nova, Vane-Vas
-- **Tipografía** Against (títulos) + Spinnaker (cuerpo) con jerarquía AA compliant
+- **1 paleta:** Vane-Vas — colores cálidos y accesibles (AA compliant)
+- **Tipografía** Against (títulos) + Spinnaker (cuerpo)
 - **Spacing** sistema Fibonacci (base 4px)
 - **Grilla** 12 columnas tipo Bootstrap
 - **Componentes** botones, cards, inputs, tags
@@ -49,12 +49,8 @@ Abrí `design-system/index.html` en tu navegador para explorar:
 - **Tipografía:** [Against](https://www.fontshare.com/fonts/against) (títulos) · [Spinnaker](https://fonts.google.com/specimen/Spinnaker) (cuerpo)
 - **Grid:** 12 columnas, gap Fibonacci
 
-## 📋 Paletas disponibles
+## 📋 Paleta
 
-| Nombre | Archivo | Mood |
+| Nombre | Colores | Mood |
 |--------|---------|------|
-| Midnight Ember | `assets/palettes/Midnight Ember.png` | Oscuro, dramático, cálido |
-| Golden Hour | `assets/palettes/Golden Hour.png` | Cálido, dorado, luminoso |
-| Botanical Calm | `assets/palettes/Botanical Calm.png` | Natural, minimalista, orgánico |
-| Terra Nova | `assets/palettes/Terra Nova.png` | Terroso, sofisticado, audaz |
-| Vane-Vas | — | Claro, accesible (AA), minimalista |
+| Vane-Vas | `#FAF5F0` `#A9C6D9` `#F2B544` `#A6826D` `#5A3E39` | Claro, accesible (AA), minimalista |
